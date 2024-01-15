@@ -2,7 +2,37 @@
 	"name": "monovitality",
 	"private": true,
 	"version": "0.0.1",
+	"description": "An example monorepo for a React SPA with Vite, SCSS, TypeScript, Storybook support",
 	"type": "module",
+	"keywords": [
+		"React",
+		"SPA",
+		"Vite",
+		"Storybook",
+		"TypeScript",
+		"SCSS",
+		"monorepo",
+		"Lerna"
+	],
+	"author": {
+		"name": "Konstantin Kovalev",
+		"email": "constantiner@gmail.com"
+	},
+	"contributors": [
+		{
+			"name": "Konstantin Kovalev",
+			"email": "constantiner@gmail.com"
+		}
+	],
+	"homepage": "https://github.com/Constantiner/monovitality#readme",
+	"license": "MIT",
+	"repository": {
+		"type": "git",
+		"url": "git+https://github.com/Constantiner/monovitality.git"
+	},
+	"bugs": {
+		"url": "https://github.com/Constantiner/monovitality/issues"
+	},
 	"scripts": {
 		"samoware-web-contacts:start": "npm run start-contacts --prefix ./packages/samoware-web",
 		"dev": "npm run dev --prefix ./packages/web",
@@ -10,13 +40,13 @@
 		"lint": "npx lerna run lint",
 		"preview": "npm run preview --prefix ./packages/web"
 	},
+	"workspaces": [
+		"packages/*"
+	],
 	"dependencies": {
 		"react": "^18.2.0",
 		"react-dom": "^18.2.0"
 	},
-	"workspaces": [
-		"packages/*"
-	],
 	"devDependencies": {
 		"@types/react": "^18.2.43",
 		"@types/react-dom": "^18.2.17",

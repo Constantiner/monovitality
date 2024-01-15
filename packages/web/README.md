@@ -1,6 +1,6 @@
 # `@monovitality/web`
 
-> TODO: description
+React SPA
 
 ## Usage
 

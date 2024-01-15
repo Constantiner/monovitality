@@ -1,7 +1,7 @@
 {
 	"name": "@monovitality/web",
 	"version": "0.0.1",
-	"description": "> TODO: description",
+	"description": "A package with React web application aka SPA",
 	"private": true,
 	"type": "module",
 	"author": {
