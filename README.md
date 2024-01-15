@@ -1,2 +1,3 @@
 # monovitality
-An example repository for a React SPA with Vite, SCSS, TypeScript, Storybook support
+
+An example monorepo for a React SPA with Vite, SCSS, TypeScript, Storybook support
