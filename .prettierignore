@@ -1,0 +1,13 @@
+/node_modules/
+/packages/*/lib
+/packages/*/dist
+/packages/*/temp/
+/packages/*/coverage/
+/packages/*/node_modules/
+/packages/*/build/
+/packages/*/bin/
+/dist/
+/build/
+/packages/*/storybook-static
+package-lock.json
+/packages/*/package-lock.json

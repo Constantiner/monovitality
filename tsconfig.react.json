@@ -1,0 +1,11 @@
+{
+	"extends": "./tsconfig.base.json",
+	"compilerOptions": {
+		/* Visit https://aka.ms/tsconfig.json to read more about this file */
+
+		/* Basic Options */
+		"lib": ["ES2020", "DOM", "DOM.Iterable"] /* Specify library files to be included in the compilation. */,
+		// "allowJs": true,                       /* Allow javascript files to be compiled. */
+		"jsx": "react-jsx"
+	}
+}

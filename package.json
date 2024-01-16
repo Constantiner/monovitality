@@ -37,8 +37,10 @@
 		"samoware-web-contacts:start": "npm run start-contacts --prefix ./packages/samoware-web",
 		"dev": "npm run dev --prefix ./packages/web",
 		"build": "npm run build --prefix ./packages/web",
-		"lint": "npx lerna run lint",
-		"preview": "npm run preview --prefix ./packages/web"
+		"lint:nonpackages": "npx eslint 'configurations/**/*.{js,cjs,ts}'",
+		"lint": "npm run lint:nonpackages && npx lerna run lint",
+		"preview": "npm run preview --prefix ./packages/web",
+		"format": "npx prettier --write '**/*.{js,cjs,ts,jsx,tsx,css,scss,json,htm,html,yml,eslintrc,huskyrc,lintstagedrc,prettierrc,stylelintrc}'"
 	},
 	"workspaces": [
 		"packages/*"
@@ -48,15 +50,34 @@
 		"react-dom": "^18.2.0"
 	},
 	"devDependencies": {
+		"@babel/eslint-parser": "^7.23.3",
 		"@types/react": "^18.2.43",
 		"@types/react-dom": "^18.2.17",
 		"@typescript-eslint/eslint-plugin": "^6.14.0",
 		"@typescript-eslint/parser": "^6.14.0",
 		"@vitejs/plugin-react-swc": "^3.5.0",
+		"cross-env": "^7.0.3",
 		"eslint": "^8.55.0",
+		"eslint-config-prettier": "^9.1.0",
+		"eslint-config-react-app": "^7.0.1",
+		"eslint-import-resolver-typescript": "^3.6.1",
+		"eslint-plugin-import": "^2.29.1",
+		"eslint-plugin-jest": "^27.6.3",
+		"eslint-plugin-jsx-a11y": "^6.8.0",
+		"eslint-plugin-node": "^11.1.0",
+		"eslint-plugin-prettier": "^5.1.3",
+		"eslint-plugin-react": "^7.33.2",
 		"eslint-plugin-react-hooks": "^4.6.0",
 		"eslint-plugin-react-refresh": "^0.4.5",
+		"eslint-plugin-unicorn": "^50.0.1",
 		"lerna": "^8.0.2",
+		"prettier": "^3.2.2",
+		"stylelint": "^16.1.0",
+		"stylelint-config-prettier": "^9.0.5",
+		"stylelint-config-recommended": "^14.0.0",
+		"stylelint-config-recommended-scss": "^14.0.0",
+		"stylelint-prettier": "^5.0.0",
+		"stylelint-scss": "^6.0.0",
 		"typescript": "^5.2.2",
 		"vite": "^5.0.8"
 	}

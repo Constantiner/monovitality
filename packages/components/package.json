@@ -20,6 +20,9 @@
 		"type": "git",
 		"url": "git+https://github.com/Constantiner/monovitality.git"
 	},
+	"scripts": {
+		"lint": "npx tsc --noEmit && npx eslint . --ext js,cjs,jsx,ts,tsx --report-unused-disable-directives --max-warnings 0 && npx stylelint '**/*.{css,scss}' --allow-empty-input"
+	},
 	"bugs": {
 		"url": "https://github.com/Constantiner/monovitality/issues"
 	},

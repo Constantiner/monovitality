@@ -6,9 +6,12 @@ yarn-debug.log*
 yarn-error.log*
 pnpm-debug.log*
 lerna-debug.log*
+lerna-debug.log*
+package.json.lerna_backup
 
 node_modules
 dist
+build
 dist-ssr
 *.local
 
@@ -22,3 +25,20 @@ dist-ssr
 *.njsproj
 *.sln
 *.sw?
+
+
+/packages/*/storybook-static
+/packages/*/lib
+/packages/*/bin
+/packages/*/coverage/
+/packages/*/dist/
+/packages/*/build/
+/packages/*/temp/
+/packages/*/node_modules/
+/packages/*/.pnp
+/packages/*/.pnp.js
+/packages/*/npm-debug.log*
+/packages/*/lerna-debug.log*
+/packages/*/yarn-debug.log*
+/packages/*/yarn-error.log*
+/packages/*/.eslintcache
