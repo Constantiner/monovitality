@@ -4,7 +4,7 @@ React SPA
 
 ## Usage
 
-```JS
+```ts
 const web = require('@monovitality/web');
 
 // TODO: DEMONSTRATE API

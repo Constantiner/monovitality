@@ -1,7 +1,7 @@
 {
-	"name": "@monovitality/web",
+	"name": "@monovitality/components",
 	"version": "0.0.1",
-	"description": "A package with React web application aka SPA",
+	"description": "A package with shared React components",
 	"private": true,
 	"type": "module",
 	"author": {
@@ -20,16 +20,8 @@
 		"type": "git",
 		"url": "git+https://github.com/Constantiner/monovitality.git"
 	},
-	"scripts": {
-		"dev": "vite",
-		"build": "tsc && vite build",
-		"lint": "eslint . --ext ts,tsx --report-unused-disable-directives --max-warnings 0",
-		"preview": "vite preview"
-	},
 	"bugs": {
 		"url": "https://github.com/Constantiner/monovitality/issues"
 	},
-	"dependencies": {
-		"@monovitality/components": "*"
-	}
+	"main": "src/index.ts"
 }
