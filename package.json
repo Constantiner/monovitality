@@ -39,8 +39,10 @@
 		"build": "npm run build --prefix ./packages/web",
 		"lint:nonpackages": "npx eslint 'configurations/**/*.{js,cjs,ts}'",
 		"lint": "npm run lint:nonpackages && npx lerna run lint",
+		"lint-staged": "npx lint-staged",
 		"preview": "npm run preview --prefix ./packages/web",
-		"format": "npx prettier --write '**/*.{js,cjs,ts,jsx,tsx,css,scss,json,htm,html,yml,eslintrc,huskyrc,lintstagedrc,prettierrc,stylelintrc}'"
+		"format": "npx prettier --write '**/*.{js,cjs,ts,jsx,tsx,css,scss,json,htm,html,yml,eslintrc,huskyrc,lintstagedrc,prettierrc,stylelintrc}'",
+		"prepare": "husky install"
 	},
 	"workspaces": [
 		"packages/*"
@@ -71,6 +73,7 @@
 		"eslint-plugin-react-refresh": "^0.4.5",
 		"eslint-plugin-unicorn": "^50.0.1",
 		"lerna": "^8.0.2",
+		"lint-staged": "^15.2.0",
 		"prettier": "^3.2.2",
 		"stylelint": "^16.1.0",
 		"stylelint-config-recommended": "^14.0.0",
@@ -78,6 +81,7 @@
 		"stylelint-prettier": "^5.0.0",
 		"stylelint-scss": "^6.0.0",
 		"typescript": "^5.2.2",
-		"vite": "^5.0.8"
+		"vite": "^5.0.8",
+		"husky": "^8.0.0"
 	}
 }
