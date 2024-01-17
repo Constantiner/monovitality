@@ -73,7 +73,6 @@
 		"lerna": "^8.0.2",
 		"prettier": "^3.2.2",
 		"stylelint": "^16.1.0",
-		"stylelint-config-prettier": "^9.0.5",
 		"stylelint-config-recommended": "^14.0.0",
 		"stylelint-config-recommended-scss": "^14.0.0",
 		"stylelint-prettier": "^5.0.0",
