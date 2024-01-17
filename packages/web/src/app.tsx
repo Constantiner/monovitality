@@ -1,6 +1,6 @@
 import { Button, IconHolder, getSvgIcon } from "@monovitality/components";
 import { useState } from "react";
-import "./app.css";
+import "./app.scss";
 import { ReactComponent as ReactLogo } from "./react.svg";
 import { ReactComponent as ViteLogo } from "./vite.svg";
 

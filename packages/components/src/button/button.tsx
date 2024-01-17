@@ -1,5 +1,5 @@
 import { type ButtonHTMLAttributes, forwardRef } from "react";
-import "./button.css";
+import "./button.scss";
 
 export type ButtonProperties = ButtonHTMLAttributes<HTMLButtonElement>;
 

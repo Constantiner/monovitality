@@ -2,7 +2,7 @@ import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import classNames from "clsx";
 import type { FunctionComponent } from "react";
 import { P, match } from "ts-pattern";
-import "./iconHolder.css";
+import "./iconHolder.scss";
 import type { HasTitle, IconProperties } from "./iconHolderUtil";
 
 type IconHolderProperties = HasTitle & { icon?: IconProperties; className?: string };
