@@ -1,4 +1,4 @@
-import { Button, IconHolder, getSvgIcon } from "@monovitality/components";
+import { Button, GlobalStyles, IconHolder, getSvgIcon } from "@monovitality/components";
 import { useState } from "react";
 import "./app.scss";
 import { ReactComponent as ReactLogo } from "./react.svg";
@@ -12,6 +12,7 @@ function App(): JSX.Element {
 
 	return (
 		<>
+			<GlobalStyles />
 			<div className="logo-container">
 				<a href="https://vitejs.dev" target="_blank" rel="noreferrer">
 					<IconHolder icon={viteLogoIcon} className="logo" title="Vite logo" />

@@ -8,3 +8,4 @@ export {
 	type IconProperties,
 	type SVGIcon
 } from "./iconHolder/iconHolderUtil";
+export * from "./styles/globalStyles";

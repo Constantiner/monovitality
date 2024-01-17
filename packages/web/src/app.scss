@@ -1,7 +1,9 @@
+@import "~@monovitality/components/src/styles/global";
+
 #root {
-	max-width: 1280px;
+	max-width: pxToRem(1280px);
 	margin: 0 auto;
-	padding: 2rem;
+	padding: pxToRem(32px);
 	text-align: center;
 }
 
@@ -10,12 +12,12 @@
 	flex-direction: row;
 	justify-content: center;
 	align-items: center;
-	gap: 1em;
+	gap: pxToRem(16px);
 
 	.logo {
-		height: 6em;
-		width: 6em;
-		padding: 1.5em;
+		height: pxToRem(160px);
+		width: pxToRem(160px);
+		padding: pxToRem(24px);
 		will-change: filter;
 		transition: filter 300ms;
 
@@ -45,7 +47,7 @@
 }
 
 .card {
-	padding: 2em;
+	padding: pxToRem(32px);
 }
 
 .read-the-docs {

@@ -5,5 +5,14 @@ import { defineConfig } from "vite";
 // https://vitejs.dev/config/
 // eslint-disable-next-line no-restricted-syntax
 export default defineConfig({
-	plugins: [react(), svgr()]
+	plugins: [react(), svgr()],
+	resolve: {
+		alias: [
+			{
+				// this is required for the SCSS modules
+				find: /^~(.*)$/,
+				replacement: "$1"
+			}
+		]
+	}
 });

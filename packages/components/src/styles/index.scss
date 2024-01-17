@@ -1,0 +1,23 @@
+@import "~normalize.css/normalize.css";
+@import "./global";
+
+:root {
+	box-sizing: border-box;
+	font-size: 1rem;
+	// font-size: calc(1vw + 1vh + 0.5vmin);
+}
+
+*,
+*::before,
+*::after {
+	box-sizing: inherit;
+}
+
+body {
+	@include font-family-pt-sans;
+	font-synthesis: none;
+	text-rendering: optimizeLegibility;
+	-webkit-font-smoothing: antialiased;
+	-moz-osx-font-smoothing: grayscale;
+	line-height: 1.5;
+}
