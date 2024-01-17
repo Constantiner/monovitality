@@ -2,7 +2,7 @@ import { useState } from "react";
 import reactLogo from "./assets/react.svg";
 import viteLogo from "./assets/vite.svg";
 import { Button } from "@monovitality/components";
-import "./application.css";
+import "./app.css";
 
 function App(): JSX.Element {
 	const [count, setCount] = useState(0);
