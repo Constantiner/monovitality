@@ -1,0 +1,12 @@
+.monovitality-icon-holder {
+	display: flex;
+	justify-content: center;
+	align-items: center;
+}
+
+.monovitality-icon-holder .svg-inline--fa {
+	height: 100%;
+	width: 100%;
+	vertical-align: initial;
+	box-sizing: inherit;
+}

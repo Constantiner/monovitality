@@ -1,20 +1,23 @@
+import { Button, IconHolder, getSvgIcon } from "@monovitality/components";
 import { useState } from "react";
-import reactLogo from "./assets/react.svg";
-import viteLogo from "./assets/vite.svg";
-import { Button } from "@monovitality/components";
 import "./app.css";
+import { ReactComponent as ReactLogo } from "./react.svg";
+import { ReactComponent as ViteLogo } from "./vite.svg";
+
+const reactLogoIcon = getSvgIcon(ReactLogo);
+const viteLogoIcon = getSvgIcon(ViteLogo);
 
 function App(): JSX.Element {
 	const [count, setCount] = useState(0);
 
 	return (
 		<>
-			<div>
+			<div className="logo-container">
 				<a href="https://vitejs.dev" target="_blank" rel="noreferrer">
-					<img src={viteLogo} className="logo" alt="Vite logo" />
+					<IconHolder icon={viteLogoIcon} className="logo" title="Vite logo" />
 				</a>
 				<a href="https://react.dev" target="_blank" rel="noreferrer">
-					<img src={reactLogo} className="logo react" alt="React logo" />
+					<IconHolder icon={reactLogoIcon} className="logo react" title="React Logo" />
 				</a>
 			</div>
 			<h1>Vite + React</h1>
