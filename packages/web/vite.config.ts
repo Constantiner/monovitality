@@ -33,6 +33,13 @@ export default defineConfig({
 		]
 	},
 	build: {
-		assetsDir: ""
+		assetsDir: "",
+		rollupOptions: {
+			output: {
+				entryFileNames: "[name]-[hash:10].js",
+				chunkFileNames: "[name]-[hash:10].js",
+				assetFileNames: "[name]-[hash:10].[ext]"
+			}
+		}
 	}
 });
