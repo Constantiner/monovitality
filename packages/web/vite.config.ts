@@ -2,12 +2,12 @@ import svgr from "@svgr/rollup";
 import react from "@vitejs/plugin-react-swc";
 import { dirname, resolve, sep } from "node:path";
 import { fileURLToPath } from "node:url";
-import { defineConfig } from "vite";
+import { defineConfig, splitVendorChunkPlugin } from "vite";
 
 // https://vitejs.dev/config/
 // eslint-disable-next-line no-restricted-syntax
 export default defineConfig({
-	plugins: [react(), svgr()],
+	plugins: [react(), svgr(), splitVendorChunkPlugin()],
 	resolve: {
 		alias: [
 			{
