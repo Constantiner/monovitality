@@ -1,8 +1,8 @@
 import svgr from "@svgr/rollup";
 import react from "@vitejs/plugin-react-swc";
-import { defineConfig } from "vite";
-import { resolve, dirname, sep } from "node:path";
+import { dirname, resolve, sep } from "node:path";
 import { fileURLToPath } from "node:url";
+import { defineConfig } from "vite";
 
 // https://vitejs.dev/config/
 // eslint-disable-next-line no-restricted-syntax
