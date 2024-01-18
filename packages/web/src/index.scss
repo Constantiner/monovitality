@@ -1,4 +1,4 @@
-@import "~@monovitality/components/src/styles/global";
+@use "~@monovitality/components/src/styles/utilities";
 
 :root {
 	color-scheme: light dark;
@@ -19,12 +19,12 @@ body {
 	margin: 0;
 	display: flex;
 	place-items: center;
-	min-width: pxToRem(320px);
+	min-width: utilities.pxToRem(320px);
 	min-height: 100vh;
 }
 
 h1 {
-	font-size: pxToRem(50px);
+	font-size: utilities.pxToRem(50px);
 	line-height: 1.1;
 }
 

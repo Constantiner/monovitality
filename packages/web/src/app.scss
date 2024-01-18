@@ -1,9 +1,9 @@
-@import "~@monovitality/components/src/styles/global";
+@use "~@monovitality/components/src/styles/utilities";
 
 #root {
-	max-width: pxToRem(1280px);
+	max-width: utilities.pxToRem(1280px);
 	margin: 0 auto;
-	padding: pxToRem(32px);
+	padding: utilities.pxToRem(32px);
 	text-align: center;
 }
 
@@ -12,12 +12,12 @@
 	flex-direction: row;
 	justify-content: center;
 	align-items: center;
-	gap: pxToRem(16px);
+	gap: utilities.pxToRem(16px);
 
 	.logo {
-		height: pxToRem(160px);
-		width: pxToRem(160px);
-		padding: pxToRem(24px);
+		height: utilities.pxToRem(160px);
+		width: utilities.pxToRem(160px);
+		padding: utilities.pxToRem(24px);
 		will-change: filter;
 		transition: filter 300ms;
 
@@ -47,7 +47,7 @@
 }
 
 .card {
-	padding: pxToRem(32px);
+	padding: utilities.pxToRem(32px);
 }
 
 .read-the-docs {

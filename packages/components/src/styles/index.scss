@@ -1,5 +1,6 @@
+@use "./utilities";
+@import "./fonts/fonts";
 @import "~normalize.css/normalize.css";
-@import "./global";
 
 :root {
 	box-sizing: border-box;
@@ -14,7 +15,7 @@
 }
 
 body {
-	@include font-family-pt-sans;
+	@include utilities.font-family-pt-sans;
 	font-synthesis: none;
 	text-rendering: optimizeLegibility;
 	-webkit-font-smoothing: antialiased;

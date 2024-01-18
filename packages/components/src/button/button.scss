@@ -1,10 +1,10 @@
-@import "../styles/global";
+@use "../styles/utilities";
 
 .monovitality-button {
-	border-radius: pxToRem(8px);
-	border: pxToRem(1px) solid transparent;
-	padding: pxToRem(9px) pxToRem(19px);
-	font-size: pxToRem(16px);
+	border-radius: utilities.pxToRem(8px);
+	border: utilities.pxToRem(1px) solid transparent;
+	padding: utilities.pxToRem(9px) utilities.pxToRem(19px);
+	font-size: utilities.pxToRem(16px);
 	font-weight: 500;
 	font-family: inherit;
 	background-color: #1a1a1a;
@@ -21,6 +21,6 @@
 
 	&:focus,
 	&:focus-visible {
-		outline: pxToRem(4px) auto -webkit-focus-ring-color;
+		outline: utilities.pxToRem(4px) auto -webkit-focus-ring-color;
 	}
 }
