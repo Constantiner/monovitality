@@ -1,8 +1,14 @@
 import { Button, GlobalStyles, IconHolder, getSvgIcon } from "@monovitality/components";
-import { useState } from "react";
+import { Suspense, lazy, useState } from "react";
 import "./app.scss";
 import { ReactComponent as ReactLogo } from "./react.svg";
 import { ReactComponent as ViteLogo } from "./vite.svg";
+
+const SubmoduleApp = lazy(() =>
+	import(/* webpackChunkName: "submodule" */ "@monovitality/submodule").then(module => ({
+		default: module.SubmoduleApp
+	}))
+);
 
 const reactLogoIcon = getSvgIcon(ReactLogo);
 const viteLogoIcon = getSvgIcon(ViteLogo);
@@ -29,6 +35,9 @@ function App(): JSX.Element {
 				</p>
 			</div>
 			<p className="read-the-docs">Click on the Vite and React logos to learn more</p>
+			<Suspense fallback="Loading footer…">
+				<SubmoduleApp />
+			</Suspense>
 		</>
 	);
 }

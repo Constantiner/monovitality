@@ -1,0 +1,7 @@
+@use "~@monovitality/components/src/styles/utilities";
+
+.monovitality-footer {
+	background-color: #000;
+	color: #fff;
+	padding: utilities.pxToRem(20px);
+}
