@@ -1,5 +1,5 @@
 import { Button, GlobalStyles, IconHolder, getSvgIcon } from "@monovitality/components";
-import { Suspense, lazy, useState } from "react";
+import { Suspense, lazy, useEffect, useState } from "react";
 import "./app.scss";
 import { ReactComponent as ReactLogo } from "./react.svg";
 import { ReactComponent as ViteLogo } from "./vite.svg";
@@ -10,11 +10,24 @@ const SubmoduleApp = lazy(() =>
 	}))
 );
 
+type Counter = typeof import("@monovitality/submodule").counter;
+
 const reactLogoIcon = getSvgIcon(ReactLogo);
 const viteLogoIcon = getSvgIcon(ViteLogo);
 
+const defaultCounter = (count: number): number => count;
+
 function App(): JSX.Element {
 	const [count, setCount] = useState(0);
+	const [counter, setCounter] = useState<Counter>(defaultCounter);
+
+	useEffect(() => {
+		async function loadCounter(): Promise<void> {
+			const { counter } = await import(/* webpackChunkName: "submodule" */ "@monovitality/submodule");
+			setCounter(() => counter);
+		}
+		loadCounter();
+	}, []);
 
 	return (
 		<>
@@ -29,7 +42,7 @@ function App(): JSX.Element {
 			</div>
 			<h1>Vite + React</h1>
 			<div className="card">
-				<Button onClick={() => setCount(count => count + 1)}>count is {count}</Button>
+				<Button onClick={() => setCount(counter)}>count is {count}</Button>
 				<p>
 					Edit <code>src/App.tsx</code> and save to test HMR
 				</p>
