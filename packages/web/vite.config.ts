@@ -31,5 +31,8 @@ export default defineConfig({
 				replacement: `${resolve(dirname(fileURLToPath(import.meta.url)), "../components/src/styles/fonts/")}${sep}$1.ttf`
 			}
 		]
+	},
+	build: {
+		assetsDir: ""
 	}
 });
