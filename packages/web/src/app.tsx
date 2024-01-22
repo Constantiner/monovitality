@@ -5,7 +5,7 @@ import { ReactComponent as ReactLogo } from "./react.svg";
 import { ReactComponent as ViteLogo } from "./vite.svg";
 
 const SubmoduleApp = lazy(() =>
-	import(/* webpackChunkName: "submodule" */ "@monovitality/submodule").then(module => ({
+	import("@monovitality/submodule").then(module => ({
 		default: module.SubmoduleApp
 	}))
 );
@@ -23,7 +23,7 @@ function App(): JSX.Element {
 
 	useEffect(() => {
 		async function loadCounter(): Promise<void> {
-			const { counter } = await import(/* webpackChunkName: "submodule" */ "@monovitality/submodule");
+			const { counter } = await import("@monovitality/submodule");
 			setCounter(() => counter);
 		}
 		loadCounter();
