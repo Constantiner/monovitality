@@ -1,0 +1,110 @@
+@use "sass:selector";
+@use "sass:map";
+@use "sass:meta";
+
+$monovitality-colors: (
+	color-main: #213547,
+	color-main-dark: rgba(255, 255, 255, 0.87),
+	background-color-main: #ffffff,
+	background-color-main-dark: #242424,
+	background-color-secondary: #eeeeee,
+	background-color-secondary-dark: #000000,
+	link-hover: #747bff,
+	link-hover-dark: #535bf2,
+	button-background-color: #f9f9f9,
+	button-background-color-dark: #1a1a1a
+);
+
+@mixin after-parent($class-name) {
+	@if variable-exists(samoware-styles-wrapper) {
+		$new-selector: selector.replace(
+			&,
+			$monovitality-styles-wrapper,
+			"#{$monovitality-styles-wrapper} #{$class-name}"
+		);
+		@at-root #{$new-selector} {
+			@content;
+		}
+	} @else {
+		#{$class-name} & {
+			@content;
+		}
+	}
+}
+
+@mixin themed() {
+	$theme-map: () !global;
+	@each $key, $submap in $monovitality-colors {
+		$value: map.get($monovitality-colors, "#{$key}");
+		@if $value {
+			$theme-map: map.merge(
+				$theme-map,
+				(
+					$key: $value
+				)
+			) !global;
+		}
+	}
+	$theme-map: map.merge(
+		$theme-map,
+		(
+			none: none
+		)
+	) !global;
+	$theme-map: map.merge(
+		$theme-map,
+		(
+			unset: unset
+		)
+	) !global;
+	@content;
+	$theme-map: null !global;
+
+	@include after-parent(".theme-dark") {
+		$theme-map: () !global;
+		@each $key, $submap in $monovitality-colors {
+			$value: map.get($monovitality-colors, "#{$key}-dark");
+			@if $value {
+				$theme-map: map.merge(
+					$theme-map,
+					(
+						$key: $value
+					)
+				) !global;
+			}
+		}
+		$theme-map: map.merge(
+			$theme-map,
+			(
+				none: none
+			)
+		) !global;
+		$theme-map: map.merge(
+			$theme-map,
+			(
+				unset: unset
+			)
+		) !global;
+		@content;
+		$theme-map: null !global;
+	}
+}
+
+@function theme($key) {
+	$value: map.get($theme-map, $key);
+	@if not $value {
+		@warn "Theme key not found: #{$key}";
+		@debug meta.inspect($theme-map);
+		@return cyan;
+	}
+	@return $value;
+}
+
+@function get-color($key) {
+	$value: map.get($monovitality-colors, $key);
+	@if not $value {
+		@warn "get-color key not found: #{$key}";
+		@return cyan;
+	}
+	@return $value;
+}

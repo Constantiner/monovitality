@@ -31,6 +31,8 @@
 	},
 	"dependencies": {
 		"@monovitality/components": "*",
-		"@monovitality/submodule": "*"
+		"@monovitality/submodule": "*",
+		"@react-hook/media-query": "^1.1.1",
+		"react-hotkeys-hook": "^4.4.4"
 	}
 }

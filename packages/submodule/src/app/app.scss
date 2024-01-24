@@ -1,7 +1,12 @@
 @use "~@monovitality/components/src/styles/utilities";
+@use "~@monovitality/components/src/styles/colors";
 
 .monovitality-footer {
-	background-color: #000;
-	color: #fff;
 	padding: utilities.pxToRem(20px);
+	max-width: utilities.pxToRem(1280px);
+	margin: 0 auto;
+	@include colors.themed() {
+		color: colors.theme(color-main);
+		background-color: colors.theme(background-color-secondary);
+	}
 }
