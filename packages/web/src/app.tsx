@@ -40,6 +40,7 @@ function App(): JSX.Element {
 					<IconHolder icon={reactLogoIcon} className="logo react" title="React Logo" />
 				</a>
 			</div>
+			<p>{import.meta.env.VITE_TEST_KEY}</p>
 			<h1>Vite + React</h1>
 			<div className="card">
 				<Button onClick={() => setCount(counter)}>count is {count}</Button>

@@ -28,7 +28,12 @@ module.exports = {
 		],
 		"react-refresh/only-export-components": ["warn", { allowConstantExport: true }]
 	},
-	extends: ["plugin:jsx-a11y/recommended", "plugin:react/recommended", "plugin:react-hooks/recommended"],
+	extends: [
+		"plugin:jsx-a11y/recommended",
+		"plugin:react/recommended",
+		"plugin:react-hooks/recommended",
+		"plugin:react/jsx-runtime"
+	],
 	settings: {
 		react: {
 			version: "detect" // React version. "detect" automatically picks the version you have installed.

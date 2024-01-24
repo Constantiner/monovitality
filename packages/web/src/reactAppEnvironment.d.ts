@@ -2,12 +2,6 @@
 /// <reference types="react" />
 /// <reference types="react-dom" />
 
-declare namespace NodeJS {
-	interface ProcessEnv {
-		readonly NODE_ENV: "development" | "production" | "staging" | "test";
-	}
-}
-
 declare module "*.svg" {
 	import * as React from "react";
 
