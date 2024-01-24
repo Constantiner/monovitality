@@ -26,7 +26,7 @@ function App(): JSX.Element {
 	const [counter, setCounter] = useState<Counter>(defaultCounter);
 	useHotkeys("alt+t", () => setIsDarkTheme(previousIsDarkTheme => !previousIsDarkTheme));
 
-	const cssClass = classNames({
+	const cssClass = classNames("monovitality-theme-container", {
 		"theme-dark": isDarkTheme
 	});
 
