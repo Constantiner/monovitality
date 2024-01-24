@@ -43,6 +43,7 @@ export default ({ mode }): UserConfig => {
 			]
 		},
 		build: {
+			outDir: "./build",
 			assetsDir: "",
 			rollupOptions: {
 				output: {
