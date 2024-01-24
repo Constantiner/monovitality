@@ -22,7 +22,7 @@
 	},
 	"scripts": {
 		"dev": "npx vite",
-		"build": "tsc && npx vite build",
+		"build": "tsc && cross-env MONOVITALITY_STYLES_WRAPPER=.test npx vite build",
 		"build:custom-root": "tsc && npx vite build --base=%%skinRoot%%",
 		"lint": "npx tsc --noEmit && npx eslint . --ext js,cjs,jsx,ts,tsx --report-unused-disable-directives --max-warnings 0 && npx stylelint '**/*.{css,scss}' --allow-empty-input",
 		"preview": "npx vite preview"

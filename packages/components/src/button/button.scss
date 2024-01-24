@@ -1,27 +1,30 @@
-@use "../styles/utilities";
-@use "../styles/colors";
+@import "../styles/utilities";
+@import "../styles/colors";
+@import "../styles/wrapper";
 
-.monovitality-button {
-	border-radius: utilities.pxToRem(8px);
-	border: utilities.pxToRem(1px) solid transparent;
-	padding: utilities.pxToRem(9px) utilities.pxToRem(19px);
-	font-size: utilities.pxToRem(16px);
-	font-weight: 500;
-	font-family: inherit;
-	cursor: pointer;
-	transition: border-color 0.25s;
+@include monovitality-styles-wrapper {
+	.monovitality-button {
+		border-radius: pxToRem(8px);
+		border: pxToRem(1px) solid transparent;
+		padding: pxToRem(9px) pxToRem(19px);
+		font-size: pxToRem(16px);
+		font-weight: 500;
+		font-family: inherit;
+		cursor: pointer;
+		transition: border-color 0.25s;
 
-	@include colors.themed() {
-		background-color: colors.theme(button-background-color);
-		color: colors.theme(color-main);
-	}
+		@include themed() {
+			background-color: theme(button-background-color);
+			color: theme(color-main);
+		}
 
-	&:hover {
-		border-color: #646cff;
-	}
+		&:hover {
+			border-color: #646cff;
+		}
 
-	&:focus,
-	&:focus-visible {
-		outline: utilities.pxToRem(4px) auto -webkit-focus-ring-color;
+		&:focus,
+		&:focus-visible {
+			outline: pxToRem(4px) auto -webkit-focus-ring-color;
+		}
 	}
 }

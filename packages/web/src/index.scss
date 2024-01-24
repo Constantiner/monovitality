@@ -1,4 +1,4 @@
-@use "~@monovitality/components/src/styles/utilities";
+@import "~@monovitality/components/src/styles/utilities";
 
 :root {
 	color-scheme: light dark;
@@ -8,6 +8,6 @@ body {
 	margin: 0;
 	display: flex;
 	place-items: center;
-	min-width: utilities.pxToRem(320px);
+	min-width: pxToRem(320px);
 	min-height: 100vh;
 }

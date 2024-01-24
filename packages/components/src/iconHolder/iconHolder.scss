@@ -1,12 +1,16 @@
-.monovitality-icon-holder {
-	display: flex;
-	justify-content: center;
-	align-items: center;
+@import "../styles/wrapper";
 
-	.svg-inline--fa {
-		height: 100%;
-		width: 100%;
-		vertical-align: initial;
-		box-sizing: inherit;
+@include monovitality-styles-wrapper {
+	.monovitality-icon-holder {
+		display: flex;
+		justify-content: center;
+		align-items: center;
+
+		.svg-inline--fa {
+			height: 100%;
+			width: 100%;
+			vertical-align: initial;
+			box-sizing: inherit;
+		}
 	}
 }

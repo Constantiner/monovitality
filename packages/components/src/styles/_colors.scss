@@ -16,7 +16,7 @@ $monovitality-colors: (
 );
 
 @mixin after-parent($class-name) {
-	@if variable-exists(samoware-styles-wrapper) {
+	@if variable-exists(monovitality-styles-wrapper) {
 		$new-selector: selector.replace(
 			&,
 			$monovitality-styles-wrapper,

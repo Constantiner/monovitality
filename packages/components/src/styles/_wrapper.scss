@@ -1,0 +1,9 @@
+@mixin monovitality-styles-wrapper {
+	@if variable-exists(monovitality-styles-wrapper) {
+		#{$monovitality-styles-wrapper} {
+			@content;
+		}
+	} @else {
+		@content;
+	}
+}

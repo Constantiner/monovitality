@@ -1,12 +1,15 @@
-@use "~@monovitality/components/src/styles/utilities";
-@use "~@monovitality/components/src/styles/colors";
+@import "~@monovitality/components/src/styles/utilities";
+@import "~@monovitality/components/src/styles/colors";
+@import "~@monovitality/components/src/styles/wrapper";
 
-.monovitality-footer {
-	padding: utilities.pxToRem(20px);
-	max-width: utilities.pxToRem(1280px);
-	margin: 0 auto;
-	@include colors.themed() {
-		color: colors.theme(color-main);
-		background-color: colors.theme(background-color-secondary);
+@include monovitality-styles-wrapper {
+	.monovitality-footer {
+		padding: pxToRem(20px);
+		max-width: pxToRem(1280px);
+		margin: 0 auto;
+		@include themed() {
+			color: theme(color-main);
+			background-color: theme(background-color-secondary);
+		}
 	}
 }
