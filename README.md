@@ -33,3 +33,13 @@ export default {
 
 - React components exports. Single export per file for HMR with SWC.
 - Environment variables. Replace REACT_APP_ with VITE_ for exposed environment variables. Use `import.meta.env` instead of `process.env`. See [Vite docs](https://vitejs.dev/guide/env-and-mode.html#env-variables).
+
+## IDE settings
+
+Do not forget to add to `.vscode/settings.json` the following:
+
+```json
+{
+    "eslint.workingDirectories": [{ "pattern": "./packages/*/" }]
+}
+```

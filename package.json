@@ -37,6 +37,8 @@
 		"samoware-web-contacts:start": "npm run start-contacts --prefix ./packages/samoware-web",
 		"dev": "npm run dev --prefix ./packages/web",
 		"build": "npm run build --prefix ./packages/web",
+		"storybook": "npm run storybook --prefix ./packages/storybook",
+		"build-storybook": "npm run build-storybook --prefix ./packages/storybook",
 		"lint:nonpackages": "npx eslint 'configurations/**/*.{js,cjs,ts}'",
 		"lint": "npm run lint:nonpackages && npx lerna run lint",
 		"lint-staged": "npx lint-staged",

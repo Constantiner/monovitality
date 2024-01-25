@@ -1,0 +1,47 @@
+{
+	"name": "@monovitality/storybook",
+	"version": "0.0.1",
+	"description": "Storybook for Monovitality",
+	"private": true,
+	"type": "module",
+	"author": {
+		"name": "Konstantin Kovalev",
+		"email": "constantiner@gmail.com"
+	},
+	"contributors": [
+		{
+			"name": "Konstantin Kovalev",
+			"email": "constantiner@gmail.com"
+		}
+	],
+	"homepage": "https://github.com/Constantiner/monovitality#readme",
+	"license": "MIT",
+	"repository": {
+		"type": "git",
+		"url": "git+https://github.com/Constantiner/monovitality.git"
+	},
+	"scripts": {
+		"storybook": "storybook dev -p 6006",
+		"build-storybook": "storybook build",
+		"lint": "npx tsc --noEmit && npx eslint . --ext js,cjs,jsx,ts,tsx --report-unused-disable-directives --max-warnings 0 && npx stylelint '**/*.{css,scss}' --allow-empty-input"
+	},
+	"bugs": {
+		"url": "https://github.com/Constantiner/monovitality/issues"
+	},
+	"dependencies": {
+		"@monovitality/components": "*",
+		"@monovitality/types": "*"
+	},
+	"devDependencies": {
+		"@storybook/addon-essentials": "^7.6.10",
+		"@storybook/addon-interactions": "^7.6.10",
+		"@storybook/addon-links": "^7.6.10",
+		"@storybook/addon-onboarding": "^1.0.11",
+		"@storybook/blocks": "^7.6.10",
+		"@storybook/react": "^7.6.10",
+		"@storybook/react-vite": "^7.6.10",
+		"@storybook/test": "^7.6.10",
+		"eslint-plugin-storybook": "^0.6.15",
+		"storybook": "^7.6.10"
+	}
+}
