@@ -42,7 +42,7 @@ export default ({ mode }): UserConfig => {
 					find: /^~(.*)$/,
 					replacement: "$1"
 				},
-				...getProductionAliases(["footerContent"]),
+				...getProductionAliases(["footerContent", "globalStyles"]),
 				...getFontsAliases()
 			]
 		},
