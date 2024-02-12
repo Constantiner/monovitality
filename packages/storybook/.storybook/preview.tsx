@@ -1,11 +1,11 @@
 /* eslint-disable react-refresh/only-export-components */
 import { GlobalStyles } from "@monovitality/components";
+import { useMediaQuery } from "@react-hook/media-query";
 import { type Decorator, type Preview } from "@storybook/react";
-import { useEffect, useMemo } from "react";
+import { useEffect, useState } from "react";
 
 const LIGHT_THEME_NAME = "light";
 const DARK_THEME_NAME = "dark";
-const DEFAULT_THEME = LIGHT_THEME_NAME;
 
 const hasClass = (element: Element, className: string): boolean => {
 	if (element.classList) {
@@ -42,7 +42,7 @@ const getMainContainerClass = (className?: string): string => {
 };
 
 const backgrounds = {
-	default: DEFAULT_THEME,
+	default: window.matchMedia("(prefers-color-scheme: dark)").matches ? DARK_THEME_NAME : LIGHT_THEME_NAME,
 	values: [
 		{
 			name: LIGHT_THEME_NAME,
@@ -61,15 +61,16 @@ const WithTheme: Decorator = (Story, context) => {
 	const { globals, parameters } = context;
 	const globalsBackgroundColor = globals.backgrounds?.value;
 	const backgroundsConfig = parameters.backgrounds as BackgroundsConfig;
+	const [isDarkTheme, setIsDarkTheme] = useState<boolean>(useMediaQuery("(prefers-color-scheme: dark)"));
 
-	const themeName = useMemo(() => {
-		let themeName = DEFAULT_THEME;
+	useEffect(() => {
 		if (globalsBackgroundColor) {
 			const theme = backgroundsConfig.values.find(({ value }) => value === globalsBackgroundColor);
-			themeName = theme?.name ?? DEFAULT_THEME;
+			if (theme?.name) {
+				setIsDarkTheme(theme.name === DARK_THEME_NAME);
+			}
 		}
-		return themeName;
-	}, [globalsBackgroundColor, backgroundsConfig]);
+	}, [backgroundsConfig.values, globalsBackgroundColor]);
 
 	useEffect(() => {
 		const mainContainerClassName = getMainContainerClass(import.meta.env.STORYBOOK_SAMOWARE_STYLES_WRAPPER);
@@ -77,13 +78,14 @@ const WithTheme: Decorator = (Story, context) => {
 			? document.querySelector("#themeRoot")
 			: document.querySelector("#storybook-root");
 		if (rootElement) {
-			if (themeName === DARK_THEME_NAME) {
+			if (isDarkTheme) {
 				addClass(rootElement, "theme-dark");
 			} else {
 				removeClass(rootElement, "theme-dark");
 			}
 		}
-	}, [themeName]);
+	}, [isDarkTheme]);
+
 	return Story();
 };
 
