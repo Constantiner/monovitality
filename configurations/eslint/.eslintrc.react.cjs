@@ -19,13 +19,6 @@ module.exports = {
 		"react/jsx-uses-react": "off",
 		"react/react-in-jsx-scope": "off",
 		"react/prop-types": [2, { ignore: ["children"] }],
-		"jsx-a11y/label-has-associated-control": [
-			2,
-			{
-				controlComponents: ["SamowareSwitch"],
-				depth: 6
-			}
-		],
 		"react-refresh/only-export-components": ["warn", { allowConstantExport: true }]
 	},
 	extends: [

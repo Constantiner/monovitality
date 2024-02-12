@@ -34,7 +34,6 @@
 		"url": "https://github.com/Constantiner/monovitality/issues"
 	},
 	"scripts": {
-		"samoware-web-contacts:start": "npm run start-contacts --prefix ./packages/samoware-web",
 		"dev": "npm run dev --prefix ./packages/web",
 		"build": "npm run build --prefix ./packages/web",
 		"storybook": "npm run storybook --prefix ./packages/storybook",

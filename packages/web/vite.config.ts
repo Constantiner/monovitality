@@ -29,8 +29,6 @@ const getProductionAliasesFactory = (isProduction: boolean): ((fileNames: string
 // https://vitejs.dev/config/
 // eslint-disable-next-line no-restricted-syntax
 export default ({ mode }): UserConfig => {
-	// eslint-disable-next-line no-console
-	console.log("process.env.MONOVITALITY_STYLES_WRAPPER", process.env.MONOVITALITY_STYLES_WRAPPER);
 	const isProduction = mode === "production";
 	const getProductionAliases = getProductionAliasesFactory(isProduction);
 	return defineConfig({

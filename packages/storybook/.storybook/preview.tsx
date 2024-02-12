@@ -1,5 +1,5 @@
 /* eslint-disable react-refresh/only-export-components */
-import { GlobalStyles } from "@monovitality/components";
+import { GlobalStyles, StorybookGlobalStyles } from "@monovitality/components";
 import { useMediaQuery } from "@react-hook/media-query";
 import { type Decorator, type Preview } from "@storybook/react";
 import { useEffect, useState } from "react";
@@ -73,7 +73,7 @@ const WithTheme: Decorator = (Story, context) => {
 	}, [backgroundsConfig.values, globalsBackgroundColor]);
 
 	useEffect(() => {
-		const mainContainerClassName = getMainContainerClass(import.meta.env.STORYBOOK_SAMOWARE_STYLES_WRAPPER);
+		const mainContainerClassName = getMainContainerClass(import.meta.env.VITE_MONOVITALITY_STYLES_WRAPPER);
 		const rootElement = mainContainerClassName
 			? document.querySelector("#themeRoot")
 			: document.querySelector("#storybook-root");
@@ -108,16 +108,16 @@ const preview: Preview = {
 	decorators: [
 		WithTheme,
 		(Story): JSX.Element => {
-			const mainContainerClassName = getMainContainerClass(import.meta.env.STORYBOOK_SAMOWARE_STYLES_WRAPPER);
+			const mainContainerClassName = getMainContainerClass(import.meta.env.VITE_MONOVITALITY_STYLES_WRAPPER);
 			if (mainContainerClassName) {
 				return (
-					<GlobalStyles>
+					<StorybookGlobalStyles>
 						<main className={mainContainerClassName}>
 							<section id="themeRoot">
 								<Story />
 							</section>
 						</main>
-					</GlobalStyles>
+					</StorybookGlobalStyles>
 				);
 			}
 			return (

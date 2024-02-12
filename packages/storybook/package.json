@@ -21,8 +21,8 @@
 		"url": "git+https://github.com/Constantiner/monovitality.git"
 	},
 	"scripts": {
-		"storybook": "storybook dev -p 6006",
-		"build-storybook": "storybook build",
+		"storybook": "cross-env VITE_MONOVITALITY_STYLES_WRAPPER=.monovitality-storybook npx storybook dev -p 6006",
+		"build-storybook": "cross-env VITE_MONOVITALITY_STYLES_WRAPPER=.monovitality-storybook npx storybook build",
 		"lint": "npx tsc --noEmit && npx eslint . --ext js,cjs,jsx,ts,tsx --report-unused-disable-directives --max-warnings 0 && npx stylelint '**/*.{css,scss}' --allow-empty-input"
 	},
 	"bugs": {
@@ -45,5 +45,8 @@
 		"eslint-plugin-storybook": "^0.6.15",
 		"react-docgen-typescript": "^2.2.2",
 		"storybook": "^7.6.14"
+	},
+	"engines": {
+		"node": ">=16"
 	}
 }
