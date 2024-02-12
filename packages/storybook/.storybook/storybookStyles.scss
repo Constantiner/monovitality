@@ -21,6 +21,10 @@
 		font-size: 1rem;
 		line-height: 1.5;
 		display: flex;
+
+		&[hidden] {
+			display: none;
+		}
 	}
 	#storybook-root *,
 	#storybook-root *::before,

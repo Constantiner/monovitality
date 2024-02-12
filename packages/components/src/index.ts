@@ -9,4 +9,3 @@ export {
 	type SVGIcon
 } from "./iconHolder/iconHolderUtil";
 export * from "./styles/globalStyles";
-export * from "./styles/storybookGlobalStyles";

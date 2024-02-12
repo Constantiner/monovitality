@@ -1,8 +1,24 @@
 /* eslint-disable react-refresh/only-export-components */
-import { GlobalStyles, StorybookGlobalStyles } from "@monovitality/components";
+import { GlobalStyles, type GlobalStylesProperties } from "@monovitality/components";
 import { useMediaQuery } from "@react-hook/media-query";
 import { type Decorator, type Preview } from "@storybook/react";
+import type { FunctionComponent, PropsWithChildren } from "react";
 import { useEffect, useState } from "react";
+import "./storybookStyles.scss";
+
+const StorybookGlobalStyles: FunctionComponent<PropsWithChildren<GlobalStylesProperties>> = ({
+	children,
+	className
+}): JSX.Element => {
+	if (className) {
+		return (
+			<GlobalStyles>
+				<div className={className}>{children}</div>
+			</GlobalStyles>
+		);
+	}
+	return <GlobalStyles>{children}</GlobalStyles>;
+};
 
 const LIGHT_THEME_NAME = "light";
 const DARK_THEME_NAME = "dark";

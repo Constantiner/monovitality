@@ -1,7 +1,7 @@
 import type { FunctionComponent, PropsWithChildren } from "react";
 import "./index.scss";
 
-type GlobalStylesProperties = { className?: string };
+export type GlobalStylesProperties = { className?: string };
 
 export const GlobalStyles: FunctionComponent<PropsWithChildren<GlobalStylesProperties>> = ({
 	children,
