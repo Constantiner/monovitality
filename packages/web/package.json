@@ -34,6 +34,6 @@
 		"@monovitality/components": "*",
 		"@monovitality/submodule": "*",
 		"@react-hook/media-query": "^1.1.1",
-		"react-hotkeys-hook": "^4.4.4"
+		"react-hotkeys-hook": "^4.5.0"
 	}
 }
