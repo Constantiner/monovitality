@@ -15,7 +15,10 @@ const hasClass = (element: Element, className: string): boolean => {
 	return new RegExp("(\\s|^)" + className + "(\\s|$)").test(element.className);
 };
 
-const addClass = (element: Element, className: string): void => {
+const addClass = (element: Element | null, className: string): void => {
+	if (!element) {
+		return;
+	}
 	if (element.classList) {
 		element.classList.add(className);
 	} else if (!hasClass(element, className)) {
@@ -23,7 +26,10 @@ const addClass = (element: Element, className: string): void => {
 	}
 };
 
-const removeClass = (element: Element, className: string): void => {
+const removeClass = (element: Element | null, className: string): void => {
+	if (!element) {
+		return;
+	}
 	if (element.classList) {
 		element.classList.remove(className);
 	} else if (hasClass(element, className)) {
@@ -64,6 +70,8 @@ const WithTheme: Decorator = (Story, context) => {
 	const backgroundsConfig = parameters.backgrounds as BackgroundsConfig;
 	const [isDarkTheme, setIsDarkTheme] = useState<boolean>(useMediaQuery("(prefers-color-scheme: dark)"));
 
+	const selector = context.viewMode === "docs" ? `#anchor--${context.id} .docs-story` : ".sb-show-main";
+
 	useEffect(() => {
 		if (globalsBackgroundColor) {
 			const theme = backgroundsConfig.values.find(({ value }) => value === globalsBackgroundColor);
@@ -75,9 +83,10 @@ const WithTheme: Decorator = (Story, context) => {
 
 	useEffect(() => {
 		const mainContainerClassName = getMainContainerClass(import.meta.env.VITE_MONOVITALITY_STYLES_WRAPPER);
+		const baseElement = context.canvasElement ?? (selector ? document.querySelector(selector) : document);
 		const rootElement = mainContainerClassName
-			? document.querySelector("#themeRoot")
-			: document.querySelector("#storybook-root");
+			? baseElement?.querySelector("#themeRoot")
+			: document.querySelector(context.viewMode === "docs" ? "#storybook-docs" : "#storybook-root");
 		if (rootElement) {
 			if (isDarkTheme) {
 				addClass(rootElement, "theme-dark");
@@ -85,7 +94,14 @@ const WithTheme: Decorator = (Story, context) => {
 				removeClass(rootElement, "theme-dark");
 			}
 		}
-	}, [isDarkTheme]);
+		if (mainContainerClassName && context.viewMode === "docs") {
+			if (isDarkTheme) {
+				addClass(document.querySelector("#themeRoot"), "theme-dark");
+			} else {
+				removeClass(document.querySelector("#themeRoot"), "theme-dark");
+			}
+		}
+	}, [context.canvasElement, context.viewMode, isDarkTheme, selector]);
 
 	return Story();
 };

@@ -106,7 +106,7 @@ export const Secondary: Story = {
 
 export const SecondaryWithIcon: Story = {
 	args: {
-		label: "Default Button",
+		label: "Secondary Button",
 		variant: "secondary",
 		icon: buttonIcon
 	}
@@ -114,7 +114,7 @@ export const SecondaryWithIcon: Story = {
 
 export const SecondarySmall: Story = {
 	args: {
-		label: "Default Button",
+		label: "Secondary Button",
 		variant: "secondary",
 		size: "sm"
 	}
@@ -122,7 +122,7 @@ export const SecondarySmall: Story = {
 
 export const SecondarySmallWithIcon: Story = {
 	args: {
-		label: "Default Button",
+		label: "Secondary Button",
 		variant: "secondary",
 		size: "sm",
 		icon: buttonIcon
@@ -131,7 +131,7 @@ export const SecondarySmallWithIcon: Story = {
 
 export const SecondaryLarge: Story = {
 	args: {
-		label: "Default Button",
+		label: "Secondary Button",
 		variant: "secondary",
 		size: "lg"
 	}
@@ -139,7 +139,7 @@ export const SecondaryLarge: Story = {
 
 export const SecondaryLargeWithIcon: Story = {
 	args: {
-		label: "Default Button",
+		label: "Secondary Button",
 		variant: "secondary",
 		size: "lg",
 		icon: buttonIcon
@@ -163,7 +163,7 @@ export const Outline: Story = {
 
 export const OutlineWithIcon: Story = {
 	args: {
-		label: "Default Button",
+		label: "Outline Button",
 		variant: "outline",
 		icon: buttonIcon
 	}
@@ -171,7 +171,7 @@ export const OutlineWithIcon: Story = {
 
 export const OutlineSmall: Story = {
 	args: {
-		label: "Default Button",
+		label: "Outline Button",
 		variant: "outline",
 		size: "sm"
 	}
@@ -179,7 +179,7 @@ export const OutlineSmall: Story = {
 
 export const OutlineSmallWithIcon: Story = {
 	args: {
-		label: "Default Button",
+		label: "Outline Button",
 		variant: "outline",
 		size: "sm",
 		icon: buttonIcon
@@ -188,7 +188,7 @@ export const OutlineSmallWithIcon: Story = {
 
 export const OutlineLarge: Story = {
 	args: {
-		label: "Default Button",
+		label: "Outline Button",
 		variant: "outline",
 		size: "lg"
 	}
@@ -196,7 +196,7 @@ export const OutlineLarge: Story = {
 
 export const OutlineLargeWithIcon: Story = {
 	args: {
-		label: "Default Button",
+		label: "Outline Button",
 		variant: "outline",
 		size: "lg",
 		icon: buttonIcon
