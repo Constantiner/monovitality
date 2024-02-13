@@ -29,6 +29,7 @@
 		"url": "https://github.com/Constantiner/monovitality/issues"
 	},
 	"dependencies": {
+		"@fortawesome/free-solid-svg-icons": "^6.5.1",
 		"@monovitality/components": "*",
 		"@monovitality/types": "*",
 		"@react-hook/media-query": "^1.1.1"

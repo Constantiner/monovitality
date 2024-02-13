@@ -12,19 +12,90 @@
 		font-family: inherit;
 		cursor: pointer;
 		transition: border-color 0.25s;
+		display: flex;
+		align-items: center;
+		gap: pxToRem(6px);
 
 		@include themed() {
 			background-color: theme(button-background-color);
 			color: theme(color-main);
 		}
 
-		&:hover {
-			border-color: #646cff;
-		}
-
 		&:focus,
 		&:focus-visible {
 			outline: pxToRem(4px) auto -webkit-focus-ring-color;
+		}
+
+		&:disabled {
+			opacity: 0.5;
+			cursor: not-allowed;
+		}
+
+		&:hover:enabled {
+			@include themed() {
+				border-color: theme(link-hover);
+			}
+		}
+
+		&--secondary {
+			@include themed() {
+				background-color: theme(background-color-secondary);
+			}
+		}
+
+		&--outline {
+			@include themed() {
+				background-color: transparent;
+				border-color: theme(color-main);
+				color: theme(color-main);
+			}
+
+			&:hover:enabled {
+				@include themed() {
+					background-color: theme(color-main);
+					color: theme(background-color-main);
+				}
+			}
+		}
+
+		.monovitality-icon-holder {
+			width: pxToRem(16px);
+			height: pxToRem(16px);
+		}
+
+		&--sm {
+			padding: pxToRem(7px) pxToRem(15px);
+			font-size: pxToRem(14px);
+			gap: pxToRem(5px);
+
+			.monovitality-icon-holder {
+				width: pxToRem(14px);
+				height: pxToRem(14px);
+			}
+		}
+
+		&--lg {
+			padding: pxToRem(11px) pxToRem(23px);
+			font-size: pxToRem(18px);
+			gap: pxToRem(7px);
+
+			.monovitality-icon-holder {
+				width: pxToRem(18px);
+				height: pxToRem(18px);
+			}
+		}
+
+		&--icon {
+			padding: pxToRem(6px);
+			width: pxToRem(32px);
+			height: pxToRem(32px);
+			max-width: pxToRem(32px);
+			max-height: pxToRem(32px);
+
+			.monovitality-icon-holder {
+				width: pxToRem(20px);
+				height: pxToRem(20px);
+			}
 		}
 	}
 }

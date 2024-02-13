@@ -28,9 +28,10 @@
 	},
 	"main": "src/index.ts",
 	"dependencies": {
-		"@monovitality/types": "*",
 		"@fortawesome/fontawesome-svg-core": "^6.5.1",
 		"@fortawesome/react-fontawesome": "^0.2.0",
+		"@monovitality/types": "*",
+		"class-variance-authority": "^0.7.0",
 		"normalize.css": "^8.0.1"
 	}
 }
