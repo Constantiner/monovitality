@@ -92,6 +92,9 @@
 
 	.card {
 		padding: pxToRem(32px);
+		display: flex;
+		flex-direction: column;
+		align-items: center;
 	}
 
 	.read-the-docs {

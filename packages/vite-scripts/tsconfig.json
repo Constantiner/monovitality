@@ -1,0 +1,11 @@
+{
+	"extends": "../../tsconfig.base.json",
+	"compilerOptions": {
+		"outDir": "./dist",
+		"module": "ESNext" /* Specify module code generation: 'none', 'commonjs', 'amd', 'system', 'umd', 'es2015', 'es2020', or 'ESNext'. */,
+		"moduleResolution": "Node",
+		"allowSyntheticDefaultImports": true,
+		"allowJs": true
+	},
+	"include": ["./src", "./__tests__"]
+}

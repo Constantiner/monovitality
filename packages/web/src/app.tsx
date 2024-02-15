@@ -1,11 +1,14 @@
-import { Button, GlobalStyles, IconHolder, getSvgIcon } from "@monovitality/components";
+import { faPlus as faCounterButton } from "@fortawesome/free-solid-svg-icons";
+import { Button, GlobalStyles, IconHolder, getFontAwesomeIcon, getSvgIcon } from "@monovitality/components";
+import { useMediaQuery } from "@react-hook/media-query";
 import classNames from "clsx";
 import { Suspense, lazy, useEffect, useState } from "react";
 import { useHotkeys } from "react-hotkeys-hook";
 import "./app.scss";
 import { ReactComponent as ReactLogo } from "./react.svg";
 import { ReactComponent as ViteLogo } from "./vite.svg";
-import { useMediaQuery } from "@react-hook/media-query";
+
+const counterButtonIcon = getFontAwesomeIcon(faCounterButton);
 
 const SubmoduleApp = lazy(() =>
 	import("@monovitality/submodule").then(module => ({
@@ -53,7 +56,13 @@ function App(): JSX.Element {
 					<p>{import.meta.env.VITE_TEST_KEY}</p>
 					<h1>Vite + React</h1>
 					<div className="card">
-						<Button onClick={() => setCount(counter)}>count is {count}</Button>
+						<Button
+							size="lg"
+							variant="outline"
+							onClick={() => setCount(counter)}
+							label={`count is ${count}`}
+							icon={counterButtonIcon}
+						/>
 						<p>
 							Edit <code>src/App.tsx</code> and save to test HMR
 						</p>

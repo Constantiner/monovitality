@@ -1,7 +1,7 @@
 {
-	"name": "@monovitality/submodule",
+	"name": "@monovitality/vite-scripts",
 	"version": "0.0.1",
-	"description": "A package with shared React submodule for dynamic import",
+	"description": "A package with shared Vite shared scripts for monovitality projects",
 	"private": true,
 	"type": "module",
 	"author": {
@@ -21,17 +21,10 @@
 		"url": "git+https://github.com/Constantiner/monovitality.git"
 	},
 	"scripts": {
-		"lint": "npx tsc --noEmit && npx eslint . --ext js,cjs,jsx,ts,tsx --report-unused-disable-directives --max-warnings 0 && npx stylelint '**/*.{css,scss}' --allow-empty-input"
+		"lint": "npx tsc --noEmit && npx eslint . --ext js,cjs,jsx,ts,tsx --report-unused-disable-directives --max-warnings 0"
 	},
 	"bugs": {
 		"url": "https://github.com/Constantiner/monovitality/issues"
 	},
-	"main": "src/submodule.ts",
-	"dependencies": {
-		"@monovitality/components": "*",
-		"@monovitality/types": "*"
-	},
-	"devDependencies": {
-		"@monovitality/scripts": "*"
-	}
+	"main": "src/index.js"
 }
