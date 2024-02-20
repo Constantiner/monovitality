@@ -5,7 +5,7 @@
 		"module": "ESNext" /* Specify module code generation: 'none', 'commonjs', 'amd', 'system', 'umd', 'es2015', 'es2020', or 'ESNext'. */,
 		"moduleResolution": "Node",
 		"allowSyntheticDefaultImports": true,
-		"allowJs": true
+		"checkJs": true
 	},
 	"include": ["./src", "./__tests__"]
 }

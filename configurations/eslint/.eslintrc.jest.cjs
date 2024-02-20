@@ -12,5 +12,5 @@ module.exports = {
 		"unicorn/prefer-node-protocol": "off"
 	},
 	plugins: ["jest"],
-	extends: ["./.eslintrc.node", "plugin:jest/recommended", "../../.eslintrc.cjs"]
+	extends: ["./.eslintrc.node.cjs", "plugin:jest/recommended", "../../.eslintrc.cjs"]
 };

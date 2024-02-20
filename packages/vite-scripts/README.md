@@ -1,11 +1,11 @@
-# `@monovitality/scripts`
+# `@monovitality/vite-scripts`
 
-A package with shared Vite shared scripts for monovitality projects
+A package with shared Vite scripts for monovitality projects
 
 ## Usage
 
 ```ts
-const scripts = require('@monovitality/scripts');
+const scripts = require('@monovitality/vite-scripts');
 
 // TODO: DEMONSTRATE API
 ```

@@ -1,3 +1,4 @@
+// @ts-check
 import svgr from "@svgr/rollup";
 import react from "@vitejs/plugin-react-swc";
 import { resolve, sep } from "node:path";
@@ -9,11 +10,11 @@ import { defineConfig, splitVendorChunkPlugin } from "vite";
 const FONT_FILES_EXTENSIONS = ["woff2", "woff", "ttf"];
 
 /**
- * @param {string} pwd
+ * @param {string} cwd
  * @returns {readonly Alias[]}
  */
-const getFontsAliases = pwd => {
-	const componentsSourcePath = resolve(pwd, "../components/src");
+const getFontsAliases = cwd => {
+	const componentsSourcePath = resolve(cwd, "../components/src");
 	return FONT_FILES_EXTENSIONS.map(extension => ({
 		find: new RegExp(`^(.*)\\.${extension}$`),
 		replacement: `${resolve(componentsSourcePath, "styles/fonts/")}${sep}$1.${extension}`
@@ -50,12 +51,12 @@ const getProductionAliasesFactory = isProduction => {
 // https://vitejs.dev/config/
 /**
  * @param {boolean} isProduction
- * @param {string} pwd
+ * @param {string} cwd
  * @param {string[] | undefined} productionAliases
  * @param {string | undefined} stylesWrapperVariableName
  * @returns {UserConfig}
  */
-export const getViteConfig = (isProduction, pwd, productionAliases, stylesWrapperVariableName) => {
+export const getViteConfig = (isProduction, cwd, productionAliases, stylesWrapperVariableName) => {
 	const getProductionAliases = getProductionAliasesFactory(isProduction);
 	/** @type {UserConfig} */
 	const baseConfig = {
@@ -68,7 +69,7 @@ export const getViteConfig = (isProduction, pwd, productionAliases, stylesWrappe
 					replacement: "$1"
 				},
 				...getProductionAliases(productionAliases),
-				...getFontsAliases(pwd)
+				...getFontsAliases(cwd)
 			]
 		},
 		build: {

@@ -1,4 +1,30 @@
-export interface EmptyType {}
+import { isEmptyType } from "../../src/util/empty";
 
-export const isEmptyType = (value: unknown): value is EmptyType =>
-	value !== undefined && value !== null && typeof value === "object" && Object.keys(value).length === 0;
+describe("EmptyType Domain", () => {
+	describe("isEmptyType behavior", () => {
+		it("should return true for an empty object", () => {
+			const emptyObject = {};
+			expect(isEmptyType(emptyObject)).toBe(true);
+		});
+
+		it("should return false for a non-empty object", () => {
+			const nonEmptyObject = { key: "value" };
+			expect(isEmptyType(nonEmptyObject)).toBe(false);
+		});
+
+		it("should return false for a null value", () => {
+			const nullValue = null;
+			expect(isEmptyType(nullValue)).toBe(false);
+		});
+
+		it("should return false for an undefined value", () => {
+			const undefinedValue = undefined;
+			expect(isEmptyType(undefinedValue)).toBe(false);
+		});
+
+		it("should return false for a non-object value", () => {
+			const nonObjectValue = "I am a string";
+			expect(isEmptyType(nonObjectValue)).toBe(false);
+		});
+	});
+});

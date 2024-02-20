@@ -21,10 +21,17 @@
 		"url": "git+https://github.com/Constantiner/monovitality.git"
 	},
 	"scripts": {
-		"lint": "npx tsc --noEmit && npx eslint . --ext js,cjs,jsx,ts,tsx --report-unused-disable-directives --max-warnings 0"
+		"lint": "npx tsc --noEmit && npx eslint . --ext js,cjs,jsx,ts,tsx --report-unused-disable-directives --max-warnings 0",
+		"test": "unit-test",
+		"test:coverage": "npm test -- --coverage",
+		"test:watch": "unit-test-watch",
+		"test:watch:debug": "node --inspect ./node_modules/@monovitality/scripts/bin/unitTestWatch.js"
 	},
 	"bugs": {
 		"url": "https://github.com/Constantiner/monovitality/issues"
 	},
-	"main": "src/index.ts"
+	"main": "src/index.ts",
+	"devDependencies": {
+		"@monovitality/scripts": "*"
+	}
 }

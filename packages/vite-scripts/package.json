@@ -1,7 +1,7 @@
 {
 	"name": "@monovitality/vite-scripts",
 	"version": "0.0.1",
-	"description": "A package with shared Vite shared scripts for monovitality projects",
+	"description": "A package with shared Vite scripts for monovitality projects",
 	"private": true,
 	"type": "module",
 	"author": {

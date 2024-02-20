@@ -4,7 +4,9 @@
 		// "skipLibCheck": true,
 		"module": "ESNext" /* Specify module code generation: 'none', 'commonjs', 'amd', 'system', 'umd', 'es2015', 'es2020', or 'ESNext'. */,
 		"moduleResolution": "Node",
-		"allowSyntheticDefaultImports": true
+		"allowSyntheticDefaultImports": true,
+		"checkJs": true,
+		"skipLibCheck": false
 	},
 	"include": ["vite.config.ts"]
 }

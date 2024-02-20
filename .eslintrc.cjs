@@ -10,7 +10,7 @@ module.exports = {
 		"plugin:prettier/recommended",
 		"prettier"
 	],
-	ignorePatterns: ["dist", ".eslintrc.cjs"],
+	ignorePatterns: ["dist"],
 	parserOptions: {
 		parser: "@babel/eslint-parser",
 		requireConfigFile: false,
@@ -70,14 +70,32 @@ module.exports = {
 			}
 		},
 		{
-			files: ["jest.config*.js", ".eslintrc*.js", ".eslintrc*.cjs", "**/.eslintrc*.cjs", "**/.eslintrc*.js"],
+			files: ["jest.config*.(c)js", "**/jest.config*.(c)js", ".eslintrc*.(c)js", "**/.eslintrc*.(c)js"],
 			rules: {
 				"node/no-unpublished-require": ["off"],
 				"unicorn/prefer-module": ["off"],
-				"unicorn/filename-case": ["off"]
+				"unicorn/filename-case": ["off"],
+				"no-undef": ["off"]
 			},
 			env: {
 				commonjs: true,
+				node: true
+			}
+		},
+		{
+			files: ["vite.config.ts", "**/vite.config.ts"],
+			rules: {
+				"no-restricted-syntax": ["off"]
+			},
+			env: {
+				commonjs: true,
+				node: true
+			}
+		},
+		{
+			files: ["**/*.cjs"],
+			env: {
+				es2023: true,
 				node: true
 			}
 		}
