@@ -30,8 +30,5 @@
 	"dependencies": {
 		"@monovitality/components": "*",
 		"@monovitality/types": "*"
-	},
-	"devDependencies": {
-		"@monovitality/scripts": "*"
 	}
 }
