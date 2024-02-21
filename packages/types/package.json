@@ -18,7 +18,8 @@
 	"license": "MIT",
 	"repository": {
 		"type": "git",
-		"url": "git+https://github.com/Constantiner/monovitality.git"
+		"url": "git+https://github.com/Constantiner/monovitality.git",
+		"directory": "packages/types"
 	},
 	"scripts": {
 		"lint": "npx tsc --noEmit && npx eslint . --ext js,cjs,jsx,ts,tsx --report-unused-disable-directives --max-warnings 0",

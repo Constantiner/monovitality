@@ -18,7 +18,8 @@
 	"license": "MIT",
 	"repository": {
 		"type": "git",
-		"url": "git+https://github.com/Constantiner/monovitality.git"
+		"url": "git+https://github.com/Constantiner/monovitality.git",
+		"directory": "packages/web"
 	},
 	"scripts": {
 		"dev": "npx vite",
