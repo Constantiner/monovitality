@@ -25,7 +25,7 @@
 		// "downlevelIteration": true,            /* Provide full support for iterables in 'for-of', spread, and destructuring when targeting 'ES5' or 'ES3'. */
 		"isolatedModules": true /* Transpile each file as a separate module (similar to 'ts.transpileModule'). */,
 		// "importsNotUsedAsValues": "error",
-		"verbatimModuleSyntax": true,
+		"verbatimModuleSyntax": false,
 		"downlevelIteration": true,
 		"importHelpers": true,
 

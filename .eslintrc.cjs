@@ -83,7 +83,7 @@ module.exports = {
 			}
 		},
 		{
-			files: ["vite.config.ts", "**/vite.config.ts"],
+			files: ["vite.config.ts", "**/vite.config.ts", "jest.config.ts", "**/jest.config.ts"],
 			rules: {
 				"no-restricted-syntax": ["off"]
 			},
