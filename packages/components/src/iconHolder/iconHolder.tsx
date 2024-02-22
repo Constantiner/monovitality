@@ -25,28 +25,36 @@ export const IconHolder: FunctionComponent<IconHolderProperties> = ({ icon, titl
 						></FontAwesomeIcon>
 					</div>
 				))
-				.with({ type: "faSvg" }, ({ icon: SVGIcon }) => (
-					<div className={iconHolderClasses}>
-						<SVGIcon
-							width="100%"
-							height="100%"
-							title={title}
-							focusable={false}
-							aria-hidden={true}
-							fill="currentColor"
-						></SVGIcon>
-					</div>
-				))
-				.with({ type: "svg" }, ({ icon: SVGIcon }) => (
-					<div className={iconHolderClasses}>
-						<SVGIcon
-							width="100%"
-							height="100%"
-							title={title}
-							focusable={false}
-							aria-hidden={true}
-						></SVGIcon>
-					</div>
-				))
+				.with({ type: "faSvg" }, ({ icon: SVGIcon }) =>
+					match(SVGIcon)
+						.with(P.nullish, () => null)
+						.otherwise(SVGIcon => (
+							<div className={iconHolderClasses}>
+								<SVGIcon
+									width="100%"
+									height="100%"
+									title={title}
+									focusable={false}
+									aria-hidden={true}
+									fill="currentColor"
+								></SVGIcon>
+							</div>
+						))
+				)
+				.with({ type: "svg" }, ({ icon: SVGIcon }) =>
+					match(SVGIcon)
+						.with(P.nullish, () => null)
+						.otherwise(SVGIcon => (
+							<div className={iconHolderClasses}>
+								<SVGIcon
+									width="100%"
+									height="100%"
+									title={title}
+									focusable={false}
+									aria-hidden={true}
+								></SVGIcon>
+							</div>
+						))
+				)
 				.exhaustive();
 		});

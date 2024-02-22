@@ -23,7 +23,7 @@ const viteLogoIcon = getSvgIcon(ViteLogo);
 
 const defaultCounter = (count: number): number => count;
 
-function App(): JSX.Element {
+export const App = (): JSX.Element => {
 	const [isDarkTheme, setIsDarkTheme] = useState<boolean>(useMediaQuery("(prefers-color-scheme: dark)"));
 	const [count, setCount] = useState(0);
 	const [counter, setCounter] = useState<Counter>(defaultCounter);
@@ -75,6 +75,4 @@ function App(): JSX.Element {
 			</GlobalStyles>
 		</div>
 	);
-}
-
-export { App };
+};
