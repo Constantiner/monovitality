@@ -1,22 +1,23 @@
-import { faPlus as faCounterButton } from "@fortawesome/free-solid-svg-icons";
+import { faPlus as faIncrementCounterButton } from "@fortawesome/free-solid-svg-icons";
 import { Button, GlobalStyles, IconHolder, getFontAwesomeIcon, getSvgIcon } from "@monovitality/components";
+import type { Counter } from "@monovitality/submodule";
 import { useMediaQuery } from "@react-hook/media-query";
 import classNames from "clsx";
 import { Suspense, lazy, useEffect, useState } from "react";
 import { useHotkeys } from "react-hotkeys-hook";
 import "./app.scss";
+import { ReactComponent as DecrementCounterButton } from "./minus-sign-of-a-line-in-horizontal-position-svgrepo-com.svg";
 import { ReactComponent as ReactLogo } from "./react.svg";
 import { ReactComponent as ViteLogo } from "./vite.svg";
 
-const counterButtonIcon = getFontAwesomeIcon(faCounterButton);
+const incrementCounterButtonIcon = getFontAwesomeIcon(faIncrementCounterButton);
+const decrementCounterButtonIcon = getSvgIcon(DecrementCounterButton);
 
 const SubmoduleApp = lazy(() =>
 	import("@monovitality/submodule").then(module => ({
 		default: module.SubmoduleApp
 	}))
 );
-
-type Counter = typeof import("@monovitality/submodule").counter;
 
 const reactLogoIcon = getSvgIcon(ReactLogo);
 const viteLogoIcon = getSvgIcon(ViteLogo);
@@ -26,7 +27,8 @@ const defaultCounter = (count: number): number => count;
 export const App = (): JSX.Element => {
 	const [isDarkTheme, setIsDarkTheme] = useState<boolean>(useMediaQuery("(prefers-color-scheme: dark)"));
 	const [count, setCount] = useState(0);
-	const [counter, setCounter] = useState<Counter>(defaultCounter);
+	const [incrementCounter, setIncrementCounter] = useState<Counter>(defaultCounter);
+	const [decrementCounter, setDecrementCounter] = useState<Counter>(defaultCounter);
 	useHotkeys("alt+t", () => setIsDarkTheme(previousIsDarkTheme => !previousIsDarkTheme));
 
 	const cssClass = classNames("monovitality-theme-container", {
@@ -35,8 +37,10 @@ export const App = (): JSX.Element => {
 
 	useEffect(() => {
 		async function loadCounter(): Promise<void> {
-			const { counter } = await import("@monovitality/submodule");
-			setCounter(() => counter);
+			const { incrementCounter } = await import("@monovitality/submodule");
+			setIncrementCounter(() => incrementCounter);
+			const { decrementCounter } = await import("@monovitality/submodule");
+			setDecrementCounter(() => decrementCounter);
 		}
 		loadCounter();
 	}, []);
@@ -56,13 +60,24 @@ export const App = (): JSX.Element => {
 					<p>{import.meta.env.VITE_TEST_KEY}</p>
 					<h1>Vite + React</h1>
 					<div className="card">
-						<Button
-							size="lg"
-							variant="outline"
-							onClick={() => setCount(counter)}
-							label={`count is ${count}`}
-							icon={counterButtonIcon}
-						/>
+						<div className="card__buttons">
+							<Button
+								size="lg"
+								variant="outline"
+								onClick={() => setCount(decrementCounter)}
+								label={`count is ${count}`}
+								icon={decrementCounterButtonIcon}
+								aria-label="decrement counter button"
+							/>
+							<Button
+								size="lg"
+								variant="outline"
+								onClick={() => setCount(incrementCounter)}
+								label={`count is ${count}`}
+								icon={incrementCounterButtonIcon}
+								aria-label="increment counter button"
+							/>
+						</div>
 						<p>
 							Edit <code>src/App.tsx</code> and save to test HMR
 						</p>
