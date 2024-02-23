@@ -15,6 +15,7 @@
 		display: flex;
 		align-items: center;
 		gap: pxToRem(6px);
+		line-height: 1;
 
 		@include themed() {
 			background-color: theme(button-background-color);
@@ -58,6 +59,14 @@
 			}
 		}
 
+		&.monovitality-button--icon-only {
+			padding: pxToRem(9px);
+			width: pxToRem(36px);
+			max-width: pxToRem(36px);
+			height: pxToRem(36px);
+			max-height: pxToRem(36px);
+		}
+
 		.monovitality-icon-holder {
 			width: pxToRem(16px);
 			height: pxToRem(16px);
@@ -67,6 +76,14 @@
 			padding: pxToRem(7px) pxToRem(15px);
 			font-size: pxToRem(14px);
 			gap: pxToRem(5px);
+
+			&.monovitality-button--icon-only {
+				padding: pxToRem(7px);
+				width: pxToRem(30px);
+				max-width: pxToRem(30px);
+				height: pxToRem(30px);
+				max-height: pxToRem(30px);
+			}
 
 			.monovitality-icon-holder {
 				width: pxToRem(14px);
@@ -79,22 +96,17 @@
 			font-size: pxToRem(18px);
 			gap: pxToRem(7px);
 
+			&.monovitality-button--icon-only {
+				padding: pxToRem(11px);
+				width: pxToRem(42px);
+				max-width: pxToRem(42px);
+				height: pxToRem(42px);
+				max-height: pxToRem(42px);
+			}
+
 			.monovitality-icon-holder {
 				width: pxToRem(18px);
 				height: pxToRem(18px);
-			}
-		}
-
-		&--icon {
-			padding: pxToRem(6px);
-			width: pxToRem(32px);
-			height: pxToRem(32px);
-			max-width: pxToRem(32px);
-			max-height: pxToRem(32px);
-
-			.monovitality-icon-holder {
-				width: pxToRem(20px);
-				height: pxToRem(20px);
 			}
 		}
 	}
