@@ -34,7 +34,23 @@ const config: Config = {
 		"^.+\\.svg$": "jest-svg-transformer",
 		"^.+\\.(css|less|scss)$": "identity-obj-proxy"
 	},
-	transformIgnorePatterns: ["/node_modules/(?!@react-hook/media-query)/"]
+	transformIgnorePatterns: ["/node_modules/(?!@react-hook/media-query)/"],
+	collectCoverageFrom: [
+		"<rootDir>/src/**/*.+(ts|tsx|js|cjs|jsx)",
+		"!<rootDir>/src/index.ts",
+		"!<rootDir>/src/**/.eslintrc*.+(ts|tsx|js|cjs|jsx)",
+		"!<rootDir>/src/**/*.d.ts"
+	],
+	coverageDirectory: "<rootDir>/coverage/unit/",
+	coverageThreshold: {
+		global: {
+			branches: 100,
+			functions: 100,
+			lines: 100,
+			statements: 100
+		}
+	},
+	collectCoverage: false
 };
 
 export default config;

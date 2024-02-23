@@ -28,7 +28,7 @@
 		"lint": "npx tsc --noEmit && npx eslint . --ext js,cjs,jsx,ts,tsx --report-unused-disable-directives --max-warnings 0 && npx stylelint '**/*.{css,scss}' --allow-empty-input",
 		"preview": "npx vite preview",
 		"test": "npx jest",
-		"test:watch": "npx jest --watch"
+		"test:coverage": "npx jest --coverage"
 	},
 	"bugs": {
 		"url": "https://github.com/Constantiner/monovitality/issues"
