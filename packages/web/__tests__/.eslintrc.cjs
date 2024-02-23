@@ -5,7 +5,7 @@ module.exports = {
 			files: ["**/*.tsx"],
 			settings: {
 				node: {
-					allowModules: ["@testing-library/react", "@testing-library/jest-dom"]
+					allowModules: ["@testing-library/react", "@testing-library/jest-dom", "react-dom"]
 				}
 			},
 			extends: ["../../../configurations/eslint/.eslintrc.react.cjs"]

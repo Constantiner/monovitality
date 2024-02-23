@@ -27,7 +27,8 @@
 		"build:custom-root": "tsc && npx vite build --base=%%skinRoot%%",
 		"lint": "npx tsc --noEmit && npx eslint . --ext js,cjs,jsx,ts,tsx --report-unused-disable-directives --max-warnings 0 && npx stylelint '**/*.{css,scss}' --allow-empty-input",
 		"preview": "npx vite preview",
-		"test": "jest"
+		"test": "npx jest",
+		"test:watch": "npx jest --watch"
 	},
 	"bugs": {
 		"url": "https://github.com/Constantiner/monovitality/issues"
