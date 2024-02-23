@@ -41,6 +41,7 @@
 		"lint:nonpackages": "npx eslint 'configurations/**/*.{js,cjs,ts}'",
 		"lint": "npm run lint:nonpackages && npx lerna run lint",
 		"lint-staged": "npx lint-staged",
+		"test": "npx lerna run test",
 		"preview": "npm run preview --prefix ./packages/web",
 		"format": "npx prettier --write '**/*.{js,cjs,ts,jsx,tsx,css,scss,json,htm,html,yml,eslintrc,huskyrc,lintstagedrc,prettierrc,stylelintrc}'",
 		"prepare": "husky install"
