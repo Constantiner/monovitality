@@ -1,5 +1,5 @@
 import { faPlus as faIncrementCounterButton } from "@fortawesome/free-solid-svg-icons";
-import { GlobalStyles, IconHolder, LabelButton, getFontAwesomeIcon, getSvgIcon } from "@monovitality/components";
+import { GlobalStyles, IconButton, IconHolder, getFontAwesomeIcon, getSvgIcon } from "@monovitality/components";
 import type { Counter } from "@monovitality/submodule";
 import { useMediaQuery } from "@react-hook/media-query";
 import classNames from "clsx";
@@ -60,26 +60,27 @@ export const App = (): JSX.Element => {
 					<p>{import.meta.env.VITE_TEST_KEY}</p>
 					<h1>Vite + React</h1>
 					<div className="card">
+						<p>{`Count is ${count}`}</p>
 						<div className="card__buttons">
-							<LabelButton
-								size="lg"
-								variant="outline"
-								onClick={() => setCount(decrementCounter)}
-								label={`count is ${count}`}
-								icon={decrementCounterButtonIcon}
-								aria-label="decrement counter button"
-							/>
-							<LabelButton
+							<IconButton
 								size="lg"
 								variant="outline"
 								onClick={() => setCount(incrementCounter)}
-								label={`count is ${count}`}
 								icon={incrementCounterButtonIcon}
-								aria-label="increment counter button"
+								aria-label="Increment counter"
+								title="Increment counter"
+							/>
+							<IconButton
+								size="lg"
+								variant="outline"
+								onClick={() => setCount(decrementCounter)}
+								icon={decrementCounterButtonIcon}
+								title="Decrement counter"
+								aria-label="Decrement counter"
 							/>
 						</div>
 						<p>
-							Edit <code>src/App.tsx</code> and save to test HMR
+							Edit <code>src/app.tsx</code> and save to test HMR
 						</p>
 					</div>
 					<p className="read-the-docs">Click on the Vite and React logos to learn more</p>
