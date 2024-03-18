@@ -34,7 +34,8 @@ $monovitality-colors: (
 	}
 }
 
-@mixin themed() {
+// Idea taken from here: https://javascript.plainenglish.io/the-best-way-to-add-dark-mode-to-your-react-sass-project-ce3ae3bd8616
+@mixin themed {
 	$theme-map: () !global;
 	@each $key, $submap in $monovitality-colors {
 		$value: map.get($monovitality-colors, "#{$key}");
