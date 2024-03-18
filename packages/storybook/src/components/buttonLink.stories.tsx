@@ -1,21 +1,23 @@
-import { ButtonBase, ButtonBaseProperties } from "@monovitality/components";
+import { Button, ButtonProperties } from "@monovitality/components";
 import type { Meta, StoryObj } from "@storybook/react";
 import "./buttonLink.scss";
 
+type ButtonPropertiesWithLabel = ButtonProperties & { label: string };
+
 // More on how to set up stories at: https://storybook.js.org/docs/writing-stories#default-export
-const meta: Meta<typeof ButtonBase> = {
+const meta: Meta<ButtonPropertiesWithLabel> = {
 	title: "Monovitality/LinkButton",
-	component: ButtonBase,
+	component: Button,
 	// This component will have an automatically generated Autodocs entry: https://storybook.js.org/docs/writing-docs/autodocs
 	tags: ["autodocs"],
-	render: (arguments_: ButtonBaseProperties) => {
+	render: (arguments_: ButtonPropertiesWithLabel) => {
 		const { label, ...rest } = arguments_;
 		return (
-			<ButtonBase asChild={true} {...rest}>
+			<Button asChild={true} {...rest}>
 				<a href="example.com" target="_blank">
 					{label}
 				</a>
-			</ButtonBase>
+			</Button>
 		);
 	},
 	argTypes: {
@@ -48,7 +50,7 @@ const meta: Meta<typeof ButtonBase> = {
 };
 export default meta;
 
-type Story = StoryObj<typeof ButtonBase>;
+type Story = StoryObj<ButtonPropertiesWithLabel>;
 
 // More on writing stories with args: https://storybook.js.org/docs/writing-stories/args
 export const Default: Story = {

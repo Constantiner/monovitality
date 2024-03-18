@@ -1,13 +1,13 @@
 import { faFaceSmile as faButtonIcon } from "@fortawesome/free-solid-svg-icons";
-import { Button, getFontAwesomeIcon } from "@monovitality/components";
+import { LabelButton, getFontAwesomeIcon } from "@monovitality/components";
 import type { Meta, StoryObj } from "@storybook/react";
 
 const buttonIcon = getFontAwesomeIcon(faButtonIcon);
 
 // More on how to set up stories at: https://storybook.js.org/docs/writing-stories#default-export
-const meta: Meta<typeof Button> = {
-	title: "Monovitality/Button",
-	component: Button,
+const meta: Meta<typeof LabelButton> = {
+	title: "Monovitality/LabelButton",
+	component: LabelButton,
 	// This component will have an automatically generated Autodocs entry: https://storybook.js.org/docs/writing-docs/autodocs
 	tags: ["autodocs"],
 	argTypes: {
@@ -44,32 +44,32 @@ const meta: Meta<typeof Button> = {
 };
 export default meta;
 
-type Story = StoryObj<typeof Button>;
+type Story = StoryObj<typeof LabelButton>;
 
 // More on writing stories with args: https://storybook.js.org/docs/writing-stories/args
 export const Default: Story = {
 	args: {
-		label: "Default Button"
+		label: "Default LabelButton"
 	}
 };
 
 export const DefaultWithIcon: Story = {
 	args: {
-		label: "Default Button",
+		label: "Default LabelButton",
 		icon: buttonIcon
 	}
 };
 
 export const DefaultSmall: Story = {
 	args: {
-		label: "Default Button",
+		label: "Default LabelButton",
 		size: "sm"
 	}
 };
 
 export const DefaultSmallWithIcon: Story = {
 	args: {
-		label: "Default Button",
+		label: "Default LabelButton",
 		size: "sm",
 		icon: buttonIcon
 	}
@@ -77,14 +77,14 @@ export const DefaultSmallWithIcon: Story = {
 
 export const DefaultLarge: Story = {
 	args: {
-		label: "Default Button",
+		label: "Default LabelButton",
 		size: "lg"
 	}
 };
 
 export const DefaultLargeWithIcon: Story = {
 	args: {
-		label: "Default Button",
+		label: "Default LabelButton",
 		size: "lg",
 		icon: buttonIcon
 	}
@@ -92,14 +92,14 @@ export const DefaultLargeWithIcon: Story = {
 
 export const Secondary: Story = {
 	args: {
-		label: "Secondary Button",
+		label: "Secondary LabelButton",
 		variant: "secondary"
 	}
 };
 
 export const SecondaryWithIcon: Story = {
 	args: {
-		label: "Secondary Button",
+		label: "Secondary LabelButton",
 		variant: "secondary",
 		icon: buttonIcon
 	}
@@ -107,7 +107,7 @@ export const SecondaryWithIcon: Story = {
 
 export const SecondarySmall: Story = {
 	args: {
-		label: "Secondary Button",
+		label: "Secondary LabelButton",
 		variant: "secondary",
 		size: "sm"
 	}
@@ -115,7 +115,7 @@ export const SecondarySmall: Story = {
 
 export const SecondarySmallWithIcon: Story = {
 	args: {
-		label: "Secondary Button",
+		label: "Secondary LabelButton",
 		variant: "secondary",
 		size: "sm",
 		icon: buttonIcon
@@ -124,7 +124,7 @@ export const SecondarySmallWithIcon: Story = {
 
 export const SecondaryLarge: Story = {
 	args: {
-		label: "Secondary Button",
+		label: "Secondary LabelButton",
 		variant: "secondary",
 		size: "lg"
 	}
@@ -132,7 +132,7 @@ export const SecondaryLarge: Story = {
 
 export const SecondaryLargeWithIcon: Story = {
 	args: {
-		label: "Secondary Button",
+		label: "Secondary LabelButton",
 		variant: "secondary",
 		size: "lg",
 		icon: buttonIcon
@@ -141,14 +141,14 @@ export const SecondaryLargeWithIcon: Story = {
 
 export const Outline: Story = {
 	args: {
-		label: "Outline Button",
+		label: "Outline LabelButton",
 		variant: "outline"
 	}
 };
 
 export const OutlineWithIcon: Story = {
 	args: {
-		label: "Outline Button",
+		label: "Outline LabelButton",
 		variant: "outline",
 		icon: buttonIcon
 	}
@@ -156,7 +156,7 @@ export const OutlineWithIcon: Story = {
 
 export const OutlineSmall: Story = {
 	args: {
-		label: "Outline Button",
+		label: "Outline LabelButton",
 		variant: "outline",
 		size: "sm"
 	}
@@ -164,7 +164,7 @@ export const OutlineSmall: Story = {
 
 export const OutlineSmallWithIcon: Story = {
 	args: {
-		label: "Outline Button",
+		label: "Outline LabelButton",
 		variant: "outline",
 		size: "sm",
 		icon: buttonIcon
@@ -173,7 +173,7 @@ export const OutlineSmallWithIcon: Story = {
 
 export const OutlineLarge: Story = {
 	args: {
-		label: "Outline Button",
+		label: "Outline LabelButton",
 		variant: "outline",
 		size: "lg"
 	}
@@ -181,7 +181,7 @@ export const OutlineLarge: Story = {
 
 export const OutlineLargeWithIcon: Story = {
 	args: {
-		label: "Outline Button",
+		label: "Outline LabelButton",
 		variant: "outline",
 		size: "lg",
 		icon: buttonIcon

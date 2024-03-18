@@ -1,5 +1,5 @@
 import { faPlus as faIncrementCounterButton } from "@fortawesome/free-solid-svg-icons";
-import { Button, GlobalStyles, IconHolder, getFontAwesomeIcon, getSvgIcon } from "@monovitality/components";
+import { GlobalStyles, IconHolder, LabelButton, getFontAwesomeIcon, getSvgIcon } from "@monovitality/components";
 import type { Counter } from "@monovitality/submodule";
 import { useMediaQuery } from "@react-hook/media-query";
 import classNames from "clsx";
@@ -61,7 +61,7 @@ export const App = (): JSX.Element => {
 					<h1>Vite + React</h1>
 					<div className="card">
 						<div className="card__buttons">
-							<Button
+							<LabelButton
 								size="lg"
 								variant="outline"
 								onClick={() => setCount(decrementCounter)}
@@ -69,7 +69,7 @@ export const App = (): JSX.Element => {
 								icon={decrementCounterButtonIcon}
 								aria-label="decrement counter button"
 							/>
-							<Button
+							<LabelButton
 								size="lg"
 								variant="outline"
 								onClick={() => setCount(incrementCounter)}

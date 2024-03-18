@@ -1,6 +1,6 @@
 export * from "./button/button";
-export * from "./button/buttonBase";
 export * from "./button/iconButton";
+export * from "./button/labelButton";
 export * from "./iconHolder/iconHolder";
 export {
 	getFaSvgIcon,
