@@ -12,7 +12,7 @@
 		font-family: inherit;
 		cursor: pointer;
 		transition: border-color 0.25s;
-		display: flex;
+		display: inline-flex;
 		align-items: center;
 		gap: pxToRem(6px);
 		line-height: 1;
@@ -32,10 +32,14 @@
 			cursor: not-allowed;
 		}
 
-		&:hover:enabled {
+		&:hover {
 			@include themed() {
 				border-color: theme(link-hover);
 			}
+		}
+
+		&:hover:disabled {
+			border-color: transparent;
 		}
 
 		&--secondary {

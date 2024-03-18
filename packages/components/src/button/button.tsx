@@ -3,10 +3,10 @@ import type { IconProperties } from "../iconHolder/iconHolderUtil";
 import { ButtonBase, type ButtonBaseVariants } from "./buttonBase";
 
 export type ButtonProperties = ButtonHTMLAttributes<HTMLButtonElement> &
-	ButtonBaseVariants & { label: string; icon?: IconProperties };
+	ButtonBaseVariants & { label: string; icon?: IconProperties; asChild?: boolean };
 
 export const Button = forwardRef<HTMLButtonElement, ButtonProperties>((properties, reference) => {
-	const { label, icon, variant, size, className, ...rest } = properties;
+	const { label, icon, variant, size, className, asChild, ...rest } = properties;
 	return (
 		<ButtonBase
 			ref={reference}
@@ -15,6 +15,7 @@ export const Button = forwardRef<HTMLButtonElement, ButtonProperties>((propertie
 			variant={variant}
 			size={size}
 			className={className}
+			asChild={asChild}
 			{...rest}
 		/>
 	);

@@ -1,3 +1,4 @@
+import { Slot } from "@radix-ui/react-slot";
 import { cva, type VariantProps } from "class-variance-authority";
 import cn from "clsx";
 import { forwardRef, type ButtonHTMLAttributes } from "react";
@@ -28,38 +29,35 @@ const buttonBaseVariants = cva("monovitality-button", {
 export type ButtonBaseVariants = VariantProps<typeof buttonBaseVariants>;
 
 export type ButtonBaseProperties = ButtonHTMLAttributes<HTMLButtonElement> &
-	ButtonBaseVariants & { label?: string; icon?: IconProperties };
+	ButtonBaseVariants & { label?: string; icon?: IconProperties; asChild?: boolean };
 
 export const ButtonBase = forwardRef<HTMLButtonElement, ButtonBaseProperties>((properties, reference) => {
-	const { label, icon, variant, size, className, ...rest } = properties;
+	const { label, icon, variant, size, className, asChild, ...rest } = properties;
+	const Comp = asChild ? Slot : "button";
 	return match(label)
 		.with(P.nullish, () =>
 			match(icon)
 				.with(P.nullish, () => (
-					<button
-						className={cn(buttonBaseVariants({ variant, size, className }))}
-						ref={reference}
-						{...rest}
-					/>
+					<Comp className={cn(buttonBaseVariants({ variant, size, className }))} ref={reference} {...rest} />
 				))
 				.otherwise(icon => (
-					<button className={cn(buttonBaseVariants({ variant, size, className }))} ref={reference} {...rest}>
+					<Comp className={cn(buttonBaseVariants({ variant, size, className }))} ref={reference} {...rest}>
 						<IconHolder icon={icon}></IconHolder>
-					</button>
+					</Comp>
 				))
 		)
 		.otherwise(label =>
 			match(icon)
 				.with(P.nullish, () => (
-					<button className={cn(buttonBaseVariants({ variant, size, className }))} ref={reference} {...rest}>
+					<Comp className={cn(buttonBaseVariants({ variant, size, className }))} ref={reference} {...rest}>
 						{label}
-					</button>
+					</Comp>
 				))
 				.otherwise(icon => (
-					<button className={cn(buttonBaseVariants({ variant, size, className }))} ref={reference} {...rest}>
+					<Comp className={cn(buttonBaseVariants({ variant, size, className }))} ref={reference} {...rest}>
 						<IconHolder icon={icon}></IconHolder>
 						{label}
-					</button>
+					</Comp>
 				))
 		);
 });

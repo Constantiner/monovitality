@@ -1,0 +1,10 @@
+@import "~@monovitality/components/src/styles/wrapper";
+
+@include monovitality-styles-wrapper {
+	a.monovitality-button {
+		&:link,
+		&:visited {
+			text-decoration: none;
+		}
+	}
+}
