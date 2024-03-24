@@ -83,8 +83,16 @@ module.exports = {
 			}
 		},
 		{
-			files: ["vite.config.ts", "**/vite.config.ts", "jest.config.ts", "**/jest.config.ts"],
+			files: [
+				"vite.config.ts",
+				"**/vite.config.ts",
+				"jest.config.ts",
+				"**/jest.config.ts",
+				"gatsby-config.ts",
+				"**/gatsby-config.ts"
+			],
 			rules: {
+				"unicorn/filename-case": ["off"],
 				"no-restricted-syntax": ["off"]
 			},
 			env: {

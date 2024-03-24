@@ -1,0 +1,46 @@
+{
+	"name": "@monovitality/site",
+	"version": "0.0.1",
+	"description": "Static site to show Monovitality build and Storybook",
+	"private": true,
+	"author": {
+		"name": "Konstantin Kovalev",
+		"email": "constantiner@gmail.com"
+	},
+	"contributors": [
+		{
+			"name": "Konstantin Kovalev",
+			"email": "constantiner@gmail.com"
+		}
+	],
+	"homepage": "https://github.com/Constantiner/monovitality#readme",
+	"license": "MIT",
+	"repository": {
+		"type": "git",
+		"url": "git+https://github.com/Constantiner/monovitality.git",
+		"directory": "packages/site"
+	},
+	"scripts": {
+		"develop": "npx gatsby develop",
+		"start": "npx gatsby develop",
+		"build": "npx gatsby build",
+		"serve": "npx gatsby serve",
+		"clean": "npx gatsby clean",
+		"lint": "npx tsc --noEmit && npx eslint . --ext js,cjs,jsx,ts,tsx --report-unused-disable-directives --max-warnings 0 && npx stylelint '**/*.{css,scss}' --allow-empty-input"
+	},
+	"bugs": {
+		"url": "https://github.com/Constantiner/monovitality/issues"
+	},
+	"dependencies": {
+		"@mdx-js/react": "^3.0.1",
+		"@monovitality/components": "*",
+		"gatsby": "^5.13.3",
+		"gatsby-plugin-mdx": "^5.13.1",
+		"gatsby-plugin-sass": "^6.13.1",
+		"gatsby-source-filesystem": "^5.13.1",
+		"react": "^18.2.0"
+	},
+	"engines": {
+		"node": ">=16"
+	}
+}
