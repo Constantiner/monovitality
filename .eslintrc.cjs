@@ -89,7 +89,9 @@ module.exports = {
 				"jest.config.ts",
 				"**/jest.config.ts",
 				"gatsby-config.ts",
-				"**/gatsby-config.ts"
+				"**/gatsby-config.ts",
+				"gatsby-browser.ts",
+				"**/gatsby-browser.ts"
 			],
 			rules: {
 				"unicorn/filename-case": ["off"],

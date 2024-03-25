@@ -10,6 +10,8 @@ const config: GatsbyConfig = {
 	// Learn more at: https://gatsby.dev/graphql-typegen
 	graphqlTypegen: true,
 	plugins: [
+		`gatsby-plugin-react-helmet`,
+		`gatsby-plugin-image`,
 		{
 			resolve: `gatsby-plugin-sass`,
 			options: {
@@ -22,9 +24,32 @@ const config: GatsbyConfig = {
 			options: {
 				name: "pages",
 				path: "./src/pages/"
-			},
-			__key: "pages"
-		}
+			}
+		},
+		{
+			resolve: "gatsby-source-filesystem",
+			options: {
+				name: "readme",
+				path: "../../README.md"
+			}
+		},
+		{
+			resolve: "gatsby-transformer-remark",
+			options: {
+				plugins: [
+					{
+						resolve: "gatsby-remark-images",
+						options: {
+							maxWidth: 1280
+						}
+					},
+					"gatsby-remark-autolink-headers",
+					"gatsby-remark-prismjs",
+					"gatsby-remark-smartypants"
+				]
+			}
+		},
+		"gatsby-transformer-sharp"
 	],
 	jsxRuntime: "automatic"
 };
