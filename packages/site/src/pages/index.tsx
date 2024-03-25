@@ -5,23 +5,13 @@ import { type FunctionComponent } from "react";
 import { GithubLink } from "../components/githubLink";
 import "./index.scss";
 
-type IndexPageQuery = {
-	allMarkdownRemark: {
-		edges: {
-			node: {
-				html: string;
-			};
-		}[];
-	};
-};
-
-type IndexPageProperties = PageProps<IndexPageQuery>;
+type IndexPageProperties = PageProps<Queries.IndexPageQuery>;
 
 const IndexPage: FunctionComponent<IndexPageProperties> = ({ data }) => {
 	const { allMarkdownRemark } = data;
 	const { edges } = allMarkdownRemark;
 
-	if (edges.length === 0) {
+	if (edges.length === 0 || !edges[0].node.html) {
 		return (
 			<GlobalStyles>
 				<main>No markdown content found</main>
@@ -54,7 +44,7 @@ export default IndexPage;
 export const Head: HeadFC = () => <title>Monovitality</title>;
 
 export const pageQuery = graphql`
-	query {
+	query IndexPage {
 		allMarkdownRemark {
 			edges {
 				node {
