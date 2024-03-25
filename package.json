@@ -68,10 +68,10 @@
 		"@testing-library/react": "^14.2.2",
 		"@types/jest": "^29.5.12",
 		"@types/node": "^20.11.30",
-		"@types/react": "^18.2.69",
+		"@types/react": "^18.2.70",
 		"@types/react-dom": "^18.2.22",
-		"@typescript-eslint/eslint-plugin": "^7.3.1",
-		"@typescript-eslint/parser": "^7.3.1",
+		"@typescript-eslint/eslint-plugin": "^7.4.0",
+		"@typescript-eslint/parser": "^7.4.0",
 		"@vitejs/plugin-react-swc": "^3.6.0",
 		"babel-preset-react-app": "^10.0.1",
 		"cross-env": "^7.0.3",
@@ -107,5 +107,12 @@
 		"ts-node": "^10.9.2",
 		"typescript": "^5.4.3",
 		"vite": "^5.2.6"
+	},
+	"overrides": {
+		"gatsby-plugin-react-svg": {
+			"svg-react-loader": {
+				"loader-utils": "^1.4.2"
+			}
+		}
 	}
 }

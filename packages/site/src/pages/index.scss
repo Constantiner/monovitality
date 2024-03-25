@@ -1,5 +1,33 @@
 @import "~@monovitality/components/src/styles/utilities";
 
+:root,
+html,
+body {
+	width: 100%;
+	max-width: 100%;
+	height: 100%;
+	max-height: 100%;
+	margin: 0;
+	padding: 0;
+}
+
+#___gatsby,
+#gatsby-focus-wrapper {
+	width: 100%;
+	max-width: 100%;
+	height: 100%;
+	max-height: 100%;
+	margin: 0;
+	padding: 0;
+}
+
+#gatsby-focus-wrapper {
+	display: flex;
+	flex-direction: column;
+	align-items: center;
+	position: relative;
+}
+
 .site-button {
 	&:link,
 	&:visited {
@@ -7,10 +35,9 @@
 	}
 }
 
-body {
+main {
 	width: 84%;
-	padding-left: 8%;
-	padding-right: 8%;
+	padding-top: 4rem;
 }
 
 footer {
@@ -72,19 +99,23 @@ img {
 	max-width: 100%;
 }
 
+h1:first-child {
+	margin-top: auto;
+}
+
 @media (min-width: pxToRem(760px)) {
 	body {
-		width: 87.5%;
-		margin-left: auto;
-		margin-right: auto;
 		background-color: white;
 		color: #111;
+	}
+
+	main {
+		width: 87.5%;
 		max-width: pxToRem(1400px);
 	}
 
 	h1 {
 		font-weight: 400;
-		margin-top: 4rem;
 		margin-bottom: 1.5rem;
 		font-size: 3.2rem;
 		line-height: 1;

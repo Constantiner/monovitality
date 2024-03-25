@@ -2,6 +2,7 @@ import { Button, GlobalStyles } from "@monovitality/components";
 import type { HeadFC, PageProps } from "gatsby";
 import { graphql } from "gatsby";
 import { type FunctionComponent } from "react";
+import { GithubLink } from "../components/githubLink";
 import "./index.scss";
 
 type IndexPageQuery = {
@@ -43,6 +44,7 @@ const IndexPage: FunctionComponent<IndexPageProperties> = ({ data }) => {
 					</Button>
 				</footer>
 			</main>
+			<GithubLink />
 		</GlobalStyles>
 	);
 };
