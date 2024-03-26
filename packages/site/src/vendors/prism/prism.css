@@ -9,7 +9,7 @@ pre[class*="language-"] {
 	font-family: SFMono-Regular, Consolas, "Liberation Mono", Menlo, Courier, monospace;
 	direction: ltr;
 	text-align: left;
-	white-space: pre;
+	/* white-space: pre; */
 	word-spacing: normal;
 	word-break: normal;
 	font-size: 14px;
