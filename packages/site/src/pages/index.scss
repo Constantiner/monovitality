@@ -1,4 +1,5 @@
 @import "~@monovitality/components/src/styles/utilities";
+@import "~@monovitality/components/src/styles/colors";
 
 @mixin full-size {
 	width: 100%;
@@ -47,9 +48,14 @@ footer {
 }
 
 body {
-	background-color: white;
-	color: #111;
+	color: get-color(color-main);
+	background-color: get-color(background-color-main);
 	position: relative;
+
+	&.theme-dark {
+		color: get-color(color-main-dark);
+		background-color: get-color(background-color-main-dark);
+	}
 }
 
 h1 {
