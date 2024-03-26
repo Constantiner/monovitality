@@ -1,9 +1,7 @@
-import { Button, GlobalStyles } from "@monovitality/components";
-import { useMediaQuery } from "@react-hook/media-query";
+import { Button, GlobalStyles, useTheme } from "@monovitality/components";
 import type { HeadFC, PageProps } from "gatsby";
 import { graphql } from "gatsby";
-import { useEffect, useState, type FunctionComponent } from "react";
-import { useHotkeys } from "react-hotkeys-hook";
+import { useEffect, type FunctionComponent } from "react";
 import { GithubLink } from "../components/githubLink";
 import "./index.scss";
 
@@ -40,8 +38,7 @@ const removeClass = (element: Element | null, className: string): void => {
 type IndexPageProperties = PageProps<Queries.IndexPageQuery>;
 
 const IndexPage: FunctionComponent<IndexPageProperties> = ({ data }) => {
-	const [isDarkTheme, setIsDarkTheme] = useState<boolean>(useMediaQuery("(prefers-color-scheme: dark)"));
-	useHotkeys("alt+t", () => setIsDarkTheme(previousIsDarkTheme => !previousIsDarkTheme));
+	const [isDarkTheme] = useTheme();
 	const { allMarkdownRemark } = data;
 	const { edges } = allMarkdownRemark;
 

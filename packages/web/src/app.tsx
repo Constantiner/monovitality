@@ -1,10 +1,15 @@
 import { faPlus as faIncrementCounterButton } from "@fortawesome/free-solid-svg-icons";
-import { GlobalStyles, IconButton, IconHolder, getFontAwesomeIcon, getSvgIcon } from "@monovitality/components";
+import {
+	GlobalStyles,
+	IconButton,
+	IconHolder,
+	getFontAwesomeIcon,
+	getSvgIcon,
+	useTheme
+} from "@monovitality/components";
 import type { Counter } from "@monovitality/submodule";
-import { useMediaQuery } from "@react-hook/media-query";
 import classNames from "clsx";
 import { Suspense, lazy, useEffect, useState } from "react";
-import { useHotkeys } from "react-hotkeys-hook";
 import "./app.scss";
 import { ReactComponent as DecrementCounterButton } from "./minus-sign-of-a-line-in-horizontal-position-svgrepo-com.svg";
 import { ReactComponent as ReactLogo } from "./react.svg";
@@ -25,11 +30,10 @@ const viteLogoIcon = getSvgIcon(ViteLogo);
 const defaultCounter = (count: number): number => count;
 
 export const App = (): JSX.Element => {
-	const [isDarkTheme, setIsDarkTheme] = useState<boolean>(useMediaQuery("(prefers-color-scheme: dark)"));
+	const [isDarkTheme] = useTheme();
 	const [count, setCount] = useState(0);
 	const [incrementCounter, setIncrementCounter] = useState<Counter>(defaultCounter);
 	const [decrementCounter, setDecrementCounter] = useState<Counter>(defaultCounter);
-	useHotkeys("alt+t", () => setIsDarkTheme(previousIsDarkTheme => !previousIsDarkTheme));
 
 	const cssClass = classNames("monovitality-theme-container", {
 		"theme-dark": isDarkTheme
