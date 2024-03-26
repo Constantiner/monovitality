@@ -1,24 +1,28 @@
-.github-link {
+@import "~@monovitality/components/src/styles/utilities";
+
+$base-style-name: ".github-link";
+
+#{$base-style-name} {
 	position: absolute;
 	top: 0;
 	right: 0;
-	width: 100px;
-	height: 100px;
+	width: pxToRem(100px);
+	height: pxToRem(100px);
 
 	&--triangle {
 		position: absolute;
 		top: 0;
 		right: 0;
-		border-top: 100px solid black;
-		border-left: 100px solid transparent;
+		border-top: pxToRem(100px) solid black;
+		border-left: pxToRem(100px) solid transparent;
 	}
 
 	&--icon-container {
 		position: absolute;
-		top: 5px;
-		right: 5px;
-		width: 50px;
-		height: 50px;
+		top: pxToRem(5px);
+		right: pxToRem(5px);
+		width: pxToRem(50px);
+		height: pxToRem(50px);
 		overflow: hidden;
 		box-sizing: border-box;
 	}
@@ -33,5 +37,15 @@
 
 	&:hover &--icon {
 		transform: rotate(405deg);
+	}
+}
+
+html[displayMode="dark"] #{$base-style-name} {
+	&--icon {
+		color: black;
+	}
+
+	&--triangle {
+		border-top-color: white;
 	}
 }
