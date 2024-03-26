@@ -58,6 +58,12 @@ body {
 	}
 }
 
+.monovitality-anchor-link.before {
+	@include themed() {
+		fill: theme(color-main);
+	}
+}
+
 h1 {
 	font-weight: 400;
 	margin-top: 4rem;

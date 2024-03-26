@@ -43,7 +43,12 @@ const config: GatsbyConfig = {
 							maxWidth: 1280
 						}
 					},
-					"gatsby-remark-autolink-headers",
+					{
+						resolve: "gatsby-remark-autolink-headers",
+						options: {
+							className: "monovitality-anchor-link"
+						}
+					},
 					"gatsby-remark-prismjs",
 					"gatsby-remark-smartypants"
 				]
