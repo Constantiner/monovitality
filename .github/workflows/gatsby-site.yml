@@ -30,6 +30,9 @@ defaults:
         shell: bash
 
 jobs:
+    checks:
+        uses: ./.github/workflows/checks.yml
+
     # Build job
     build:
         runs-on: ubuntu-latest

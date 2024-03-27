@@ -24,6 +24,10 @@
 		{
 			"files": ".stylelintrc",
 			"options": { "parser": "json" }
+		},
+		{
+			"files": "*.yml",
+			"options": { "useTabs": false }
 		}
 	]
 }
