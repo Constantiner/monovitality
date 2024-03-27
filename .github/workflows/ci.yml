@@ -43,6 +43,8 @@ jobs:
                   cache: npm
             - name: Install dependencies
               run: npm ci
+            - name: Run Gatsby build # We need to generate gatsby-types.d.ts
+              run: npm run build:fast --prefix ./packages/site
             - name: Run lint
               run: npm run lint
 

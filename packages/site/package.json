@@ -24,6 +24,7 @@
 		"develop": "npx gatsby develop",
 		"start": "npx gatsby develop",
 		"build": "npx gatsby build",
+		"build:fast": "npx gatsby build --noUglify=true",
 		"serve": "npx gatsby serve",
 		"clean": "npx gatsby clean",
 		"lint:post-build": "npx tsc --noEmit && npx eslint . --ext js,cjs,jsx,ts,tsx --report-unused-disable-directives --max-warnings 0 && npx stylelint '**/*.{css,scss}' --allow-empty-input",
