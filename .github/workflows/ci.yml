@@ -124,7 +124,7 @@ jobs:
             - name: Install dependencies
               run: npm ci
             - name: Build with Vite
-              run: cross-env MONOVITALITY_SPA_BASE_URL=${{ needs.configure-pages.outputs.page_url }}/web/ npm run build
+              run: MONOVITALITY_SPA_BASE_URL=${{ needs.configure-pages.outputs.page_url }}/web/ npm run build
             - name: Upload artifact
               uses: actions/upload-artifact@v4
               with:
