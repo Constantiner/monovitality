@@ -27,8 +27,7 @@
 		"build:fast": "npx gatsby build --noUglify=true",
 		"serve": "npx gatsby serve",
 		"clean": "npx gatsby clean",
-		"lint:post-build": "npx tsc --noEmit && npx eslint . --ext js,cjs,jsx,ts,tsx --report-unused-disable-directives --max-warnings 0 && npx stylelint '**/*.{css,scss}' --allow-empty-input",
-		"lint": "npm run build && npm run lint:post-build"
+		"lint": "npx tsc --noEmit && npx eslint . --ext js,cjs,jsx,ts,tsx --report-unused-disable-directives --max-warnings 0 && npx stylelint '**/*.{css,scss}' --allow-empty-input"
 	},
 	"bugs": {
 		"url": "https://github.com/Constantiner/monovitality/issues"
