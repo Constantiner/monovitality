@@ -169,6 +169,16 @@ jobs:
               with:
                   path: ./site
                   name: gatsby-site-artifact
+            - name: Dounload React SPA artifact
+              uses: actions/download-artifact@v4
+              with:
+                  path: ./site/web
+                  name: react-spa-artifact
+            - name: Dounload Storybook artifact
+              uses: actions/download-artifact@v4
+              with:
+                  path: ./site/storybook
+                  name: storybook-artifact
             - name: Upload artifact
               uses: actions/upload-pages-artifact@v3
               with:
