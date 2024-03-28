@@ -69,10 +69,10 @@ const IndexPage: FunctionComponent<IndexPageProperties> = ({ data }) => {
 				<div dangerouslySetInnerHTML={{ __html: html }} />
 				<footer>
 					<Button asChild={true} className="site-button" size="lg">
-						<a href="/web">Go to the Web App</a>
+						<a href="./web">Go to the Web App</a>
 					</Button>
 					<Button asChild={true} className="site-button" size="lg">
-						<a href="/storybook">Go to Storybook</a>
+						<a href="./storybook">Go to Storybook</a>
 					</Button>
 				</footer>
 			</main>
