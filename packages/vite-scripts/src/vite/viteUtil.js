@@ -54,9 +54,10 @@ const getProductionAliasesFactory = isProduction => {
  * @param {string} cwd
  * @param {string[] | undefined} productionAliases
  * @param {string | undefined} stylesWrapperVariableName
+ * @param {string | undefined} base
  * @returns {UserConfig}
  */
-export const getViteConfig = (isProduction, cwd, productionAliases, stylesWrapperVariableName) => {
+export const getViteConfig = (isProduction, cwd, productionAliases, stylesWrapperVariableName, base) => {
 	const getProductionAliases = getProductionAliasesFactory(isProduction);
 	/** @type {UserConfig} */
 	const baseConfig = {
@@ -95,6 +96,9 @@ export const getViteConfig = (isProduction, cwd, productionAliases, stylesWrappe
 				}
 			}
 		};
+	}
+	if (base) {
+		baseConfig.base = base;
 	}
 	return defineConfig(baseConfig);
 };

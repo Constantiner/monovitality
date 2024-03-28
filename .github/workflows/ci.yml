@@ -121,6 +121,10 @@ jobs:
                   cache: npm
             - name: Install dependencies
               run: npm ci
+            - name: Set up base path
+              run: npm ci
+            - name: Set up base path environment variable
+              run: echo "new_page_url=${{ steps.deployment.outputs.page_url }}/web/" >> $MONOVITALITY_SPA_BASE_URL
             - name: Build with Vite
               run: npm run build
             - name: Upload artifact
