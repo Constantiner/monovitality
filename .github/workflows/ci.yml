@@ -123,14 +123,8 @@ jobs:
                   cache: npm
             - name: Install dependencies
               run: npm ci
-            - name: Set up base path
-              run: npm ci
-            - name: Set up base path environment variable
-              run: echo "new_page_url=${{ needs.configure-pages.outputs.page_url }}/web/" >> $MONOVITALITY_SPA_BASE_URL
-            - name: Print base path environment variable
-              run: echo $MONOVITALITY_SPA_BASE_URL
             - name: Build with Vite
-              run: npm run build
+              run: cross-env MONOVITALITY_SPA_BASE_URL=${{ needs.configure-pages.outputs.page_url }}/web/ npm run build
             - name: Upload artifact
               uses: actions/upload-artifact@v4
               with:
