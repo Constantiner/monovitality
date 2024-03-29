@@ -62,9 +62,9 @@ The available NPM scripts for the Monovitality project are in the main `package.
 
 ## Demo
 
-You can see the deployed version of the project at [https://constantiner.github.io/monovitality/](https://constantiner.github.io/monovitality/)
+You can see the deployed version of the project at [https://constantiner.github.io/monovitality/](GitHub Pages). The demo includes the React SPA, Storybook, and Gatsby static site.
 
-You can switch between light and dark themes with the `Alt+T` keyboard shortcut. This shortcut is available in the Gatsby static site and in the React SPA.
+You can switch between light and dark themes with the `Alt+T` keyboard shortcut. This shortcut is available in the Gatsby static site and the React SPA.
 
 ## Use
 
