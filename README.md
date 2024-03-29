@@ -64,6 +64,8 @@ The available NPM scripts for the Monovitality project are in the main `package.
 
 You can see the deployed version of the project at [https://constantiner.github.io/monovitality/](https://constantiner.github.io/monovitality/)
 
+You can switch between light and dark themes with the `Alt+T` keyboard shortcut. This shortcut is available in the Gatsby static site and in the React SPA.
+
 ## Use
 
 You can use this repository as a starter to bootstrap your projects or borrow some code or ideas. The main purpose of the project is to provide infrastructure and project organization.
