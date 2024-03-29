@@ -48,17 +48,17 @@ npm ci
 
 The available NPM scripts for the Monovitality project are in the main `package.json` file.
 
-1. `dev`: Runs the React SPA in the development environment.
-2. `build`: Builds React SPA for deployment. Set the `MONOVITALITY_SPA_BASE_URL` if you need to define the base URL.
-3. `storybook`: Runs Storybook in the development environment.
-4. `build-storybook`: Builds Storybook for deployment.
-5. `dev:site`: Runs Gatsby static site in the development environment.
-6. `build:site`: Builds Gatsby static site for deployment.
-7. `clean:site`: Cleans cache and build for Gatsby static site.
-8. `lint`: Performs linting across all the code.
-9.  `test`: Runs unit tests across all the packages.
-10. `preview`: Starts local server to preview React SPA site production build.
-11. `format`: Runs Prettier, a code formatter, on all files with the specified extensions.
+- `dev`: Runs the React SPA in the development environment.
+- `build`: Builds React SPA for deployment. Set the `MONOVITALITY_SPA_BASE_URL` if you need to define the base URL.
+- `storybook`: Runs Storybook in the development environment.
+- `build-storybook`: Builds Storybook for deployment.
+- `dev:site`: Runs Gatsby static site in the development environment.
+- `build:site`: Builds Gatsby static site for deployment.
+- `clean:site`: Cleans cache and build for Gatsby static site.
+- `lint`: Performs linting across all the code.
+- `test`: Runs unit tests across all the packages.
+- `preview`: Starts local server to preview React SPA site production build.
+- `format`: Runs Prettier, a code formatter, on all files with the specified extensions.
 
 ## Demo
 
