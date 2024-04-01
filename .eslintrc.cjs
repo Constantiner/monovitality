@@ -25,6 +25,7 @@ module.exports = {
 		"unicorn/no-reduce": "off",
 		"unicorn/no-null": "off",
 		"unicorn/switch-case-braces": "off",
+		"unicorn/prefer-at": "off",
 		"no-restricted-syntax": [
 			"error",
 			{

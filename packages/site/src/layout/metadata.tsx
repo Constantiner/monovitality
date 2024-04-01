@@ -8,9 +8,25 @@ type MetadataProperties = {
 	title: string;
 };
 
+const removePrefixPath = (path: string): string => {
+	const parts = path.split("/");
+	if (parts.length === 1) {
+		return path;
+	}
+	return parts[parts.length - 1];
+};
+
+const removeEndingPathSeparatorIfPresent = (path: string): string => {
+	if (path.endsWith("/")) {
+		return path.slice(0, -1);
+	}
+	return path;
+};
+
+const getOGImage = (siteUrl: string, imgWithPrefix: string): string =>
+	`${removeEndingPathSeparatorIfPresent(siteUrl)}/${removePrefixPath(imgWithPrefix)}`;
+
 const Metadata: FunctionComponent<MetadataProperties> = ({ description = "", title }): JSX.Element => {
-	// eslint-disable-next-line no-console
-	console.log("Metadata defaultImg", defaultImg);
 	const { site, allFile } = useStaticQuery(graphql`
 		query Metadata {
 			site {
@@ -40,14 +56,6 @@ const Metadata: FunctionComponent<MetadataProperties> = ({ description = "", tit
 
 	const metaDescription = description || site.siteMetadata.description;
 
-	// eslint-disable-next-line no-console
-	console.log(
-		"Metadata og:image",
-		site.siteMetadata.siteUrl,
-		defaultImg,
-		`${site.siteMetadata.siteUrl}${defaultImg}`
-	);
-
 	return (
 		<Helmet
 			// Workaround for https://github.com/nfl/react-helmet/issues/315
@@ -75,7 +83,7 @@ const Metadata: FunctionComponent<MetadataProperties> = ({ description = "", tit
 			<meta name="og:title" content={title} />
 			<meta name="og:description" content={metaDescription} />
 			<meta name="og:type" content="website" />
-			<meta name="og:image" content={`${site.siteMetadata.siteUrl}${defaultImg}`} />
+			<meta name="og:image" content={getOGImage(site.siteMetadata.siteUrl, defaultImg)} />
 			<meta name="og:site_name" content={site.siteMetadata.title} />
 			<meta name="og:locale" content="en_US" />
 			<meta name="og:determiner" content="" />
