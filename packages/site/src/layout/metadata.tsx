@@ -9,6 +9,8 @@ type MetadataProperties = {
 };
 
 const Metadata: FunctionComponent<MetadataProperties> = ({ description = "", title }): JSX.Element => {
+	// eslint-disable-next-line no-console
+	console.log("Metadata defaultImg", defaultImg);
 	const { site, allFile } = useStaticQuery(graphql`
 		query Metadata {
 			site {
@@ -37,6 +39,14 @@ const Metadata: FunctionComponent<MetadataProperties> = ({ description = "", tit
 	`);
 
 	const metaDescription = description || site.siteMetadata.description;
+
+	// eslint-disable-next-line no-console
+	console.log(
+		"Metadata og:image",
+		site.siteMetadata.siteUrl,
+		defaultImg,
+		`${site.siteMetadata.siteUrl}${defaultImg}`
+	);
 
 	return (
 		<Helmet
