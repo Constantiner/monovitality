@@ -1,6 +1,8 @@
 import type { GatsbyConfig } from "gatsby";
 
 const siteUrl = process.env.MONOVITALITY_SITE_URL ?? "https://constantiner.github.io/monovitality/";
+// eslint-disable-next-line no-console
+console.log("siteUrl", siteUrl);
 
 const config: GatsbyConfig = {
 	siteMetadata: {
