@@ -102,6 +102,7 @@ jobs:
             - name: Build with Gatsby
               env:
                   PREFIX_PATHS: 'true'
+                  MONOVITALITY_SITE_URL: ${{ needs.configure-pages.outputs.page_url }}
               run: npm run build:site
             - name: Upload artifact
               uses: actions/upload-artifact@v4
@@ -124,7 +125,9 @@ jobs:
             - name: Install dependencies
               run: npm ci
             - name: Build with Vite
-              run: MONOVITALITY_SPA_BASE_URL=${{ needs.configure-pages.outputs.page_url }}/web/ npm run build
+              env:
+                  MONOVITALITY_SPA_BASE_URL: ${{ needs.configure-pages.outputs.page_url }}/web/
+              run: npm run build
             - name: Upload artifact
               uses: actions/upload-artifact@v4
               with:

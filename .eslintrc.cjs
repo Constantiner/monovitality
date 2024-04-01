@@ -90,6 +90,8 @@ module.exports = {
 				"**/jest.config.ts",
 				"gatsby-config.ts",
 				"**/gatsby-config.ts",
+				"gatsby-node.ts",
+				"**/gatsby-node.ts",
 				"gatsby-browser.ts",
 				"**/gatsby-browser.ts"
 			],

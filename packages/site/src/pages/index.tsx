@@ -1,8 +1,9 @@
 import { Button, GlobalStyles, useTheme } from "@monovitality/components";
-import type { HeadFC, PageProps } from "gatsby";
+import type { PageProps } from "gatsby";
 import { graphql } from "gatsby";
 import { useEffect, type FunctionComponent } from "react";
 import { GithubLink } from "../components/githubLink";
+import Metadata from "../layout/metadata";
 import "./index.scss";
 
 const hasClass = (element: Element, className: string): boolean => {
@@ -55,35 +56,39 @@ const IndexPage: FunctionComponent<IndexPageProperties> = ({ data }) => {
 
 	if (edges.length === 0 || !edges[0].node.html) {
 		return (
-			<GlobalStyles>
-				<main>No markdown content found</main>
-			</GlobalStyles>
+			<>
+				<Metadata title="Monovitality" />
+				<GlobalStyles>
+					<main>No markdown content found</main>
+				</GlobalStyles>
+			</>
 		);
 	}
 
 	const { html } = edges[0].node;
 
 	return (
-		<GlobalStyles>
-			<main>
-				<div dangerouslySetInnerHTML={{ __html: html }} />
-				<footer>
-					<Button asChild={true} className="site-button" size="lg">
-						<a href="./web">Go to the Web App</a>
-					</Button>
-					<Button asChild={true} className="site-button" size="lg">
-						<a href="./storybook">Go to Storybook</a>
-					</Button>
-				</footer>
-			</main>
-			<GithubLink />
-		</GlobalStyles>
+		<>
+			<Metadata title="Monovitality" />
+			<GlobalStyles>
+				<main>
+					<div dangerouslySetInnerHTML={{ __html: html }} />
+					<footer>
+						<Button asChild={true} className="site-button" size="lg">
+							<a href="./web">Go to the Web App</a>
+						</Button>
+						<Button asChild={true} className="site-button" size="lg">
+							<a href="./storybook">Go to Storybook</a>
+						</Button>
+					</footer>
+				</main>
+				<GithubLink />
+			</GlobalStyles>
+		</>
 	);
 };
 
 export default IndexPage;
-
-export const Head: HeadFC = () => <title>Monovitality</title>;
 
 export const pageQuery = graphql`
 	query IndexPage {

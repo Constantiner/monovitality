@@ -1,7 +1,7 @@
 {
 	"name": "@monovitality/site",
 	"version": "0.0.1",
-	"description": "Static site to show Monovitality build and Storybook",
+	"description": "Static site to present Monovitality build and Storybook",
 	"private": true,
 	"author": {
 		"name": "Konstantin Kovalev",
@@ -21,7 +21,7 @@
 		"directory": "packages/site"
 	},
 	"scripts": {
-		"develop": "npx gatsby develop",
+		"develop": "npx gatsby develop --verbose",
 		"start": "npx gatsby develop",
 		"build": "npx gatsby build",
 		"build:fast": "npx gatsby build --noUglify=true",
@@ -57,5 +57,8 @@
 	},
 	"engines": {
 		"node": ">=16"
+	},
+	"devDependencies": {
+		"@types/react-helmet": "^6.1.11"
 	}
 }

@@ -1,9 +1,17 @@
 import type { GatsbyConfig } from "gatsby";
 
+const siteUrl = process.env.MONOVITALITY_SITE_URL ?? "https://constantiner.github.io/monovitality/";
+
 const config: GatsbyConfig = {
 	siteMetadata: {
-		title: `Monovitality Site`,
-		siteUrl: `https://constantiner.github.io/monovitality/`
+		title: "Monovitality Site",
+		siteUrl: siteUrl,
+		description: "React + TypeScript + Vite + Gatsby + Monorepo starter",
+		author: "Konstantin Kovalev",
+		authorTwitter: "Constantiner",
+		authorLinkedIn: "constantiner",
+		email: "constantiner@gmail.com",
+		siteRepository: "https://github.com/Constantiner/monovitality"
 	},
 	// More easily incorporate content into your pages through automatic TypeScript type generation and better GraphQL IntelliSense.
 	// If you use VSCode you can also use the GraphQL plugin
@@ -13,10 +21,12 @@ const config: GatsbyConfig = {
 	},
 	pathPrefix: "/monovitality",
 	plugins: [
-		`gatsby-plugin-react-helmet`,
-		`gatsby-plugin-image`,
+		"gatsby-plugin-react-helmet",
+		"gatsby-plugin-image",
+		"gatsby-plugin-sharp",
+		"gatsby-transformer-sharp",
 		{
-			resolve: `gatsby-plugin-sass`,
+			resolve: "gatsby-plugin-sass",
 			options: {
 				useResolveUrlLoader: true
 			}
@@ -32,8 +42,30 @@ const config: GatsbyConfig = {
 		{
 			resolve: "gatsby-source-filesystem",
 			options: {
+				name: "images",
+				path: "./src/assets/"
+			}
+		},
+		{
+			resolve: "gatsby-source-filesystem",
+			options: {
 				name: "readme",
 				path: "../../README.md"
+			}
+		},
+		{
+			resolve: "gatsby-plugin-manifest",
+			options: {
+				name: "Monovitality Site",
+				short_name: "Monovitality",
+				start_url: "/",
+				background_color: "#263238",
+				theme_color: "#263238",
+				display: "minimal-ui",
+				icon: "./src/assets/favicon.svg",
+				icon_options: {
+					purpose: "maskable"
+				}
 			}
 		},
 		{
@@ -57,7 +89,6 @@ const config: GatsbyConfig = {
 				]
 			}
 		},
-		"gatsby-transformer-sharp",
 		{
 			resolve: "gatsby-plugin-react-svg",
 			options: {
