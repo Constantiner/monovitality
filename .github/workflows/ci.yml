@@ -128,7 +128,7 @@ jobs:
             - name: Build with Vite
               env:
                   MONOVITALITY_SPA_BASE_URL: ${{ needs.configure-pages.outputs.page_url }}/web/
-                  VITE_TEST_KEY: ${{ env.VITE_TEST_KEY }}
+                  VITE_TEST_KEY: ${{ vars.VITE_TEST_KEY }}
               run: npm run build
             - name: Upload artifact
               uses: actions/upload-artifact@v4
