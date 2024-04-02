@@ -1,5 +1,7 @@
 # `@monovitality/site`
 
+A Gatsby static site for the monovitality project.
+
 ## 🚀 Quick start
 
 1. **Create a Gatsby site.**

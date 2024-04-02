@@ -50,11 +50,13 @@ const getProductionAliasesFactory = isProduction => {
 
 // https://vitejs.dev/config/
 /**
- * @param {boolean} isProduction
- * @param {string} cwd
- * @param {string[] | undefined} productionAliases
- * @param {string | undefined} stylesWrapperVariableName
- * @param {string | undefined} base
+ * Creates a Vite configuration object to use in the Vite build and to share between different applications and/or Storybook.
+ *
+ * @param {boolean} isProduction - whether the build is for production
+ * @param {string} cwd - the current working directory
+ * @param {string[] | undefined} productionAliases - the list of file names to search production versions of by adding the `.production` suffix to file names. If undefined, no file names will be suffixed. This is useful for the integration of the React app into an existing application where we need production versions of the files with integration hooks.
+ * @param {string | undefined} stylesWrapperVariableName - the name of the environment variable containing the styles wrapper name. We use this to inject the styles wrapper name into the SCSS files building with a custom style wrapper as a namespace in case of integration of the React app into an existing application. If undefined, no additional data will be added to the SCSS files.
+ * @param {string | undefined} base - the base path for the application. If undefined, the base path will be the root path.
  * @returns {UserConfig}
  */
 export const getViteConfig = (isProduction, cwd, productionAliases, stylesWrapperVariableName, base) => {

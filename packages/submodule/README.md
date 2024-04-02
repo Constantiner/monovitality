@@ -1,11 +1,3 @@
 # `@monovitality/submodule`
 
-A package with shared React submodule for dynamic import
-
-## Usage
-
-```ts
-const submodule = require('@monovitality/submodule');
-
-// TODO: DEMONSTRATE API
-```
+A package with a shared React submodule for dynamic import

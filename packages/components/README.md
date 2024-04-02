@@ -1,11 +1,3 @@
 # `@monovitality/components`
 
-A package with shared React components
-
-## Usage
-
-```ts
-const components = require('@monovitality/components');
-
-// TODO: DEMONSTRATE API
-```
+A package with shared React components for the monovitality project.
