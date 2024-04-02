@@ -1,7 +1,7 @@
 import { Button, GlobalStyles, useTheme } from "@monovitality/components";
 import type { PageProps } from "gatsby";
 import { graphql } from "gatsby";
-import { useEffect, type FunctionComponent } from "react";
+import { useLayoutEffect, type FunctionComponent } from "react";
 import { GithubLink } from "../components/githubLink";
 import Metadata from "../layout/metadata";
 import "./index.scss";
@@ -43,7 +43,7 @@ const IndexPage: FunctionComponent<IndexPageProperties> = ({ data }) => {
 	const { allMarkdownRemark } = data;
 	const { edges } = allMarkdownRemark;
 
-	useEffect(() => {
+	useLayoutEffect(() => {
 		const mainElement = document.querySelector("body");
 		if (mainElement) {
 			if (isDarkTheme) {
