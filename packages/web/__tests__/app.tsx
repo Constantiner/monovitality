@@ -47,7 +47,7 @@ describe("App Domain", () => {
 				getByRole = component.getByRole;
 			});
 			const footer = await getByRole?.("contentinfo");
-			expect(footer).toHaveTextContent("Submodule App Development");
+			expect(footer).toHaveTextContent("Submodule App in Development Mode");
 		});
 	});
 });
