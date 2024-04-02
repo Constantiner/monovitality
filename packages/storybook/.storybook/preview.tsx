@@ -1,6 +1,5 @@
 /* eslint-disable react-refresh/only-export-components */
 import { GlobalStyles } from "@monovitality/components";
-import { useMediaQuery } from "@react-hook/media-query";
 import { type Decorator, type Preview } from "@storybook/react";
 import { useEffect, useState } from "react";
 import "./storybookStyles.scss";
@@ -68,7 +67,7 @@ const WithTheme: Decorator = (Story, context) => {
 	const { globals, parameters } = context;
 	const globalsBackgroundColor = globals.backgrounds?.value;
 	const backgroundsConfig = parameters.backgrounds as BackgroundsConfig;
-	const [isDarkTheme, setIsDarkTheme] = useState<boolean>(useMediaQuery("(prefers-color-scheme: dark)"));
+	const [isDarkTheme, setIsDarkTheme] = useState<boolean>(window.matchMedia("(prefers-color-scheme: dark)").matches);
 
 	const selector = context.viewMode === "docs" ? `#anchor--${context.id} .docs-story` : ".sb-show-main";
 
