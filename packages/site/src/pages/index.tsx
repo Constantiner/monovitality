@@ -1,40 +1,10 @@
-import { Button, GlobalStyles, useTheme } from "@monovitality/components";
+import { Button, GlobalStyles, addClass, removeClass, useTheme } from "@monovitality/components";
 import type { PageProps } from "gatsby";
 import { graphql } from "gatsby";
 import { useLayoutEffect, type FunctionComponent } from "react";
 import { GithubLink } from "../components/githubLink";
 import Metadata from "../layout/metadata";
 import "./index.scss";
-
-const hasClass = (element: Element, className: string): boolean => {
-	if (element.classList) {
-		return element.classList.contains(className);
-	}
-	return new RegExp("(\\s|^)" + className + "(\\s|$)").test(element.className);
-};
-
-const addClass = (element: Element | null, className: string): void => {
-	if (!element) {
-		return;
-	}
-	if (element.classList) {
-		element.classList.add(className);
-	} else if (!hasClass(element, className)) {
-		element.className += " " + className;
-	}
-};
-
-const removeClass = (element: Element | null, className: string): void => {
-	if (!element) {
-		return;
-	}
-	if (element.classList) {
-		element.classList.remove(className);
-	} else if (hasClass(element, className)) {
-		const reg = new RegExp("(\\s|^)" + className + "(\\s|$)");
-		element.className = element.className.replace(reg, " ");
-	}
-};
 
 type IndexPageProperties = PageProps<Queries.IndexPageQuery>;
 

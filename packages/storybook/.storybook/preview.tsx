@@ -1,41 +1,11 @@
 /* eslint-disable react-refresh/only-export-components */
-import { GlobalStyles } from "@monovitality/components";
+import { GlobalStyles, addClass, removeClass } from "@monovitality/components";
 import { type Decorator, type Preview } from "@storybook/react";
 import { useEffect, useState } from "react";
 import "./storybookStyles.scss";
 
 const LIGHT_THEME_NAME = "light";
 const DARK_THEME_NAME = "dark";
-
-const hasClass = (element: Element, className: string): boolean => {
-	if (element.classList) {
-		return element.classList.contains(className);
-	}
-	return new RegExp("(\\s|^)" + className + "(\\s|$)").test(element.className);
-};
-
-const addClass = (element: Element | null, className: string): void => {
-	if (!element) {
-		return;
-	}
-	if (element.classList) {
-		element.classList.add(className);
-	} else if (!hasClass(element, className)) {
-		element.className += " " + className;
-	}
-};
-
-const removeClass = (element: Element | null, className: string): void => {
-	if (!element) {
-		return;
-	}
-	if (element.classList) {
-		element.classList.remove(className);
-	} else if (hasClass(element, className)) {
-		const reg = new RegExp("(\\s|^)" + className + "(\\s|$)");
-		element.className = element.className.replace(reg, " ");
-	}
-};
 
 const getMainContainerClass = (className?: string): string => {
 	if (!className) {
