@@ -59,6 +59,7 @@ The available NPM scripts for the Monovitality project are in the main `package.
 - `test`: Runs unit tests across all the packages.
 - `preview`: Starts local server to preview React SPA site production build.
 - `format`: Runs Prettier, a code formatter, on all files with the specified extensions.
+- `lint:config-inspector`: Runs [ESLint config inspector](https://eslint.org/blog/2024/04/eslint-config-inspector/) to debug ESLint configuration.
 
 ## Demo
 

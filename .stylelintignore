@@ -1,8 +1,0 @@
-/node_modules/
-/packages/*/lib
-/packages/*/dist
-/packages/*/temp/
-/packages/*/coverage/
-/packages/*/node_modules/
-/dist/
-/build/

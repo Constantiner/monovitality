@@ -22,14 +22,15 @@
 		"directory": "packages/components"
 	},
 	"scripts": {
-		"lint": "npx tsc --noEmit && npx eslint . --ext js,cjs,jsx,ts,tsx --report-unused-disable-directives --max-warnings 0 && npx stylelint '**/*.{css,scss}' --allow-empty-input"
+		"types": "npx tsc --noEmit",
+		"stylelint": "npx stylelint '**/*.{css,scss}' --allow-empty-input"
 	},
 	"bugs": {
 		"url": "https://github.com/Constantiner/monovitality/issues"
 	},
 	"main": "src/index.ts",
 	"dependencies": {
-		"@fortawesome/fontawesome-svg-core": "^6.5.1",
+		"@fortawesome/fontawesome-svg-core": "^6.5.2",
 		"@fortawesome/react-fontawesome": "^0.2.0",
 		"@monovitality/types": "*",
 		"@react-hook/media-query": "^1.1.1",

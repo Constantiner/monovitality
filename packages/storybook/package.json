@@ -24,7 +24,8 @@
 	"scripts": {
 		"storybook": "cross-env VITE_MONOVITALITY_STYLES_WRAPPER=.monovitality-storybook npx storybook dev -p 6006",
 		"build-storybook": "cross-env VITE_MONOVITALITY_STYLES_WRAPPER=.monovitality-storybook npx storybook build",
-		"lint": "npx tsc --noEmit && npx eslint . --ext js,cjs,jsx,ts,tsx --report-unused-disable-directives --max-warnings 0 && npx stylelint '**/*.{css,scss}' --allow-empty-input"
+		"types": "npx tsc --noEmit",
+		"stylelint": "npx stylelint '**/*.{css,scss}' --allow-empty-input"
 	},
 	"bugs": {
 		"url": "https://github.com/Constantiner/monovitality/issues"
@@ -35,17 +36,17 @@
 	},
 	"devDependencies": {
 		"@monovitality/vite-scripts": "*",
-		"@storybook/addon-essentials": "^8.0.5",
-		"@storybook/addon-interactions": "^8.0.5",
-		"@storybook/addon-links": "^8.0.5",
-		"@storybook/addon-onboarding": "^8.0.5",
-		"@storybook/blocks": "^8.0.5",
-		"@storybook/react": "^8.0.5",
-		"@storybook/react-vite": "^8.0.5",
-		"@storybook/test": "^8.0.5",
+		"@storybook/addon-essentials": "^8.0.8",
+		"@storybook/addon-interactions": "^8.0.8",
+		"@storybook/addon-links": "^8.0.8",
+		"@storybook/addon-onboarding": "^8.0.8",
+		"@storybook/blocks": "^8.0.8",
+		"@storybook/react": "^8.0.8",
+		"@storybook/react-vite": "^8.0.8",
+		"@storybook/test": "^8.0.8",
 		"eslint-plugin-storybook": "^0.8.0",
 		"react-docgen-typescript": "^2.2.2",
-		"storybook": "^8.0.5"
+		"storybook": "^8.0.8"
 	},
 	"engines": {
 		"node": ">=16"

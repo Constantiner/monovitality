@@ -1,9 +1,0 @@
-/node_modules/
-/coverage/
-/lib/
-/dist/
-/build/
-/storybook-static/
-/.cache/
-/public/
-/src/gatsby-types.d.ts

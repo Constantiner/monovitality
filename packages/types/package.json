@@ -22,7 +22,7 @@
 		"directory": "packages/types"
 	},
 	"scripts": {
-		"lint": "npx tsc --noEmit && npx eslint . --ext js,cjs,jsx,ts,tsx --report-unused-disable-directives --max-warnings 0",
+		"types": "npx tsc --noEmit",
 		"test": "npx jest",
 		"test:watch": "npx jest --watch",
 		"test:coverage": "npx jest --coverage"

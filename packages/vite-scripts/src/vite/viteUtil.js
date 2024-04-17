@@ -2,7 +2,7 @@
 import svgr from "@svgr/rollup";
 import react from "@vitejs/plugin-react-swc";
 import { resolve, sep } from "node:path";
-import { defineConfig, splitVendorChunkPlugin } from "vite";
+import { defineConfig, splitVendorChunkPlugin } from "vite"; // TODO - fix deprecation issue
 
 /** @typedef {import("vite").Alias} Alias */
 /** @typedef {import("vite").UserConfig} UserConfig */

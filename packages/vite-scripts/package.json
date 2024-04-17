@@ -22,7 +22,7 @@
 		"directory": "packages/vite-scripts"
 	},
 	"scripts": {
-		"lint": "npx tsc --noEmit && npx eslint . --ext js,cjs,jsx,ts,tsx --report-unused-disable-directives --max-warnings 0"
+		"types": "npx tsc --noEmit"
 	},
 	"bugs": {
 		"url": "https://github.com/Constantiner/monovitality/issues"

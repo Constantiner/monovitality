@@ -1,7 +1,0 @@
-/node_modules/
-/coverage/
-/lib/
-/dist/
-/build/
-/storybook-static/
-!.storybook
