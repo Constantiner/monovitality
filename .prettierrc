@@ -10,10 +10,6 @@
 			"options": { "parser": "json" }
 		},
 		{
-			"files": ".eslintrc",
-			"options": { "parser": "json" }
-		},
-		{
 			"files": ".huskyrc",
 			"options": { "parser": "json" }
 		},

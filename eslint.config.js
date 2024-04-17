@@ -157,16 +157,6 @@ export default tsEslint.config(
 		}
 	},
 	{
-		files: [".eslintrc*.cjs", "**/.eslintrc*.cjs"],
-		rules: {
-			"n/no-unpublished-require": ["off"],
-			"unicorn/prefer-module": ["off"],
-			"unicorn/filename-case": ["off"],
-			"no-undef": ["off"],
-			"no-restricted-syntax": ["off"]
-		}
-	},
-	{
 		...nodePlugin.configs["flat/recommended"],
 		files: [
 			"**/*.cjs",

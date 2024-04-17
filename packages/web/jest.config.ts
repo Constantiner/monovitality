@@ -38,7 +38,6 @@ const config: Config = {
 	collectCoverageFrom: [
 		"<rootDir>/src/**/*.+(ts|tsx|js|cjs|jsx)",
 		"!<rootDir>/src/index.ts",
-		"!<rootDir>/src/**/.eslintrc*.+(ts|tsx|js|cjs|jsx)",
 		"!<rootDir>/src/**/*.d.ts"
 	],
 	coverageDirectory: "<rootDir>/coverage/unit/",
