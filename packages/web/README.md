@@ -51,10 +51,16 @@ npm run build
 npm run build:custom-root
 ```
 
-- `npm run lint`: Runs TypeScript compiler with no output files, ESLint for JavaScript and TypeScript files, and Stylelint for CSS and SCSS files. It reports unused ESLint directives and fails on any warnings.
+- `npm run types`: Runs TypeScript compiler with no output files for type checks.
 
 ```bash
-npm run lint
+npm run types
+```
+
+- `npm run stylelint`: Runs Stylelint to check CSS files.
+
+```bash
+npm run stylelint
 ```
 
 - `npm run preview`: Serves the production build for preview.

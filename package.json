@@ -50,9 +50,14 @@
 		"lint:config-inspector": "npx @eslint/config-inspector",
 		"prepare": "husky"
 	},
-	"workspaces": [
-		"packages/*"
-	],
+	"workspaces": {
+		"packages": [
+			"packages/*"
+		],
+		"nohoist": [
+			"gatsby"
+		]
+	},
 	"dependencies": {
 		"@fortawesome/free-solid-svg-icons": "^6.5.2",
 		"@radix-ui/react-slot": "^1.0.2",

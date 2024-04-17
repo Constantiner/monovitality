@@ -55,11 +55,12 @@ The available NPM scripts for the Monovitality project are in the main `package.
 - `dev:site`: Runs Gatsby static site in the development environment.
 - `build:site`: Builds Gatsby static site for deployment.
 - `clean:site`: Cleans cache and build for Gatsby static site.
-- `lint`: Performs linting across all the code.
+- `lint`: Performs complete linting across all the code (including types and CSS checks).
+- `lint:dev`: Performs JS/TS files linting across all the code.
+- `lint:config-inspector`: Runs [ESLint config inspector](https://eslint.org/blog/2024/04/eslint-config-inspector/) to debug ESLint configuration.
 - `test`: Runs unit tests across all the packages.
 - `preview`: Starts local server to preview React SPA site production build.
 - `format`: Runs Prettier, a code formatter, on all files with the specified extensions.
-- `lint:config-inspector`: Runs [ESLint config inspector](https://eslint.org/blog/2024/04/eslint-config-inspector/) to debug ESLint configuration.
 
 ## Demo
 
