@@ -85,6 +85,7 @@ Do not forget to add to `.vscode/settings.json` the following:
 
 ```json
 {
-    "eslint.workingDirectories": [{ "pattern": "./packages/*/" }]
+	"eslint.workingDirectories": [{ "pattern": "./packages/*/" }],
+	"eslint.experimental.useFlatConfig": true
 }
 ```
