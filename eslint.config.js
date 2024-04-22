@@ -105,13 +105,6 @@ export default tsEslint.config(
 		}
 	},
 	{
-		files: ["**/*.cjs"],
-		languageOptions: {
-			globals: globals.node,
-			sourceType: "commonjs"
-		}
-	},
-	{
 		files: ["**/*.d.ts"],
 		rules: {
 			"@typescript-eslint/triple-slash-reference": ["off"],
@@ -264,6 +257,13 @@ export default tsEslint.config(
 			"unicorn/no-null": "off",
 			"unicorn/no-unreadable-array-destructuring": "off",
 			"unicorn/prefer-node-protocol": "off"
+		}
+	},
+	{
+		files: ["**/*.cjs"],
+		languageOptions: {
+			globals: globals.node,
+			sourceType: "commonjs"
 		}
 	}
 );
