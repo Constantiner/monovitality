@@ -2,7 +2,7 @@
 import svgr from "@svgr/rollup";
 import react from "@vitejs/plugin-react-swc";
 import { resolve, sep } from "node:path";
-import { defineConfig, splitVendorChunkPlugin } from "vite"; // TODO - fix deprecation issue
+import { defineConfig } from "vite";
 
 /** @typedef {import("vite").Alias} Alias */
 /** @typedef {import("vite").UserConfig} UserConfig */
@@ -63,7 +63,7 @@ export const getViteConfig = (isProduction, cwd, productionAliases, stylesWrappe
 	const getProductionAliases = getProductionAliasesFactory(isProduction);
 	/** @type {UserConfig} */
 	const baseConfig = {
-		plugins: [react(), svgr(), splitVendorChunkPlugin()],
+		plugins: [react(), svgr()],
 		resolve: {
 			alias: [
 				{
@@ -82,7 +82,12 @@ export const getViteConfig = (isProduction, cwd, productionAliases, stylesWrappe
 				output: {
 					entryFileNames: "[name]-[hash:10].js",
 					chunkFileNames: "[name]-[hash:10].js",
-					assetFileNames: "[name]-[hash:10].[ext]"
+					assetFileNames: "[name]-[hash:10].[ext]",
+					manualChunks: {
+						submodule: ["@monovitality/submodule"],
+						web: ["@monovitality/web"],
+						components: ["@monovitality/components"]
+					}
 				}
 			}
 		}

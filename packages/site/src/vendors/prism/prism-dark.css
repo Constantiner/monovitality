@@ -1,9 +1,3 @@
-/* 
-  TODO: This was run through a SCSS compiler manually so that I can apply
-  dark mode styles. Need to figure out how to require a .scss file in 
-  gatsby-browser.js.
-*/
-
 .theme-dark code[class*="language-"],
 .theme-dark pre[class*="language-"] {
 	color: #abb2bf;

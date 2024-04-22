@@ -8,6 +8,7 @@
 		"name": "Konstantin Kovalev",
 		"email": "constantiner@gmail.com"
 	},
+	"main": "src/main.tsx",
 	"contributors": [
 		{
 			"name": "Konstantin Kovalev",

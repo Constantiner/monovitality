@@ -2,16 +2,16 @@ import js from "@eslint/js";
 import stylisticJs from "@stylistic/eslint-plugin-js";
 import tsParser from "@typescript-eslint/parser";
 import pluginImport from "eslint-plugin-import";
+import jest from "eslint-plugin-jest";
+import reactAccessibility from "eslint-plugin-jsx-a11y";
 import nodePlugin from "eslint-plugin-n";
 import eslintPluginPrettierRecommended from "eslint-plugin-prettier/recommended";
+import hooksPlugin from "eslint-plugin-react-hooks";
+import reactRefresh from "eslint-plugin-react-refresh";
+import reactRecommended from "eslint-plugin-react/configs/recommended.js";
 import eslintPluginUnicorn from "eslint-plugin-unicorn";
 import globals from "globals";
 import tsEslint from "typescript-eslint";
-import reactRecommended from "eslint-plugin-react/configs/recommended.js";
-import hooksPlugin from "eslint-plugin-react-hooks";
-import reactAccessibility from "eslint-plugin-jsx-a11y";
-import reactRefresh from "eslint-plugin-react-refresh";
-import jest from "eslint-plugin-jest";
 
 const ecmaVersion = 2022;
 const reactFiles = [
