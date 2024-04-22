@@ -6,7 +6,8 @@
 	.monovitality-button {
 		border-radius: pxToRem(8px);
 		border: pxToRem(1px) solid transparent;
-		padding: pxToRem(9px) pxToRem(19px);
+		padding-block: pxToRem(9px);
+		padding-inline: pxToRem(19px);
 		font-size: pxToRem(16px);
 		font-weight: 500;
 		font-family: inherit;
@@ -16,6 +17,9 @@
 		align-items: center;
 		gap: pxToRem(6px);
 		line-height: 1;
+		user-select: none;
+		touch-action: manipulation;
+		inline-size: fit-content;
 
 		@include themed() {
 			background-color: theme(button-background-color);
@@ -65,52 +69,54 @@
 
 		&.monovitality-button--icon-only {
 			padding: pxToRem(9px);
-			width: pxToRem(36px);
-			max-width: pxToRem(36px);
-			height: pxToRem(36px);
-			max-height: pxToRem(36px);
+			inline-size: pxToRem(36px);
+			max-inline-size: pxToRem(36px);
+			block-size: pxToRem(36px);
+			max-block-size: pxToRem(36px);
 		}
 
 		.monovitality-icon-holder {
-			width: pxToRem(16px);
-			height: pxToRem(16px);
+			inline-size: pxToRem(16px);
+			block-size: pxToRem(16px);
 		}
 
 		&--sm {
-			padding: pxToRem(7px) pxToRem(15px);
+			padding-inline: pxToRem(15px);
+			padding-block: pxToRem(7px);
 			font-size: pxToRem(14px);
 			gap: pxToRem(5px);
 
 			&.monovitality-button--icon-only {
 				padding: pxToRem(7px);
-				width: pxToRem(30px);
-				max-width: pxToRem(30px);
-				height: pxToRem(30px);
-				max-height: pxToRem(30px);
+				inline-size: pxToRem(30px);
+				max-inline-size: pxToRem(30px);
+				block-size: pxToRem(30px);
+				max-block-size: pxToRem(30px);
 			}
 
 			.monovitality-icon-holder {
-				width: pxToRem(14px);
-				height: pxToRem(14px);
+				inline-size: pxToRem(14px);
+				block-size: pxToRem(14px);
 			}
 		}
 
 		&--lg {
-			padding: pxToRem(11px) pxToRem(23px);
+			padding-block: pxToRem(11px);
+			padding-inline: pxToRem(23px);
 			font-size: pxToRem(18px);
 			gap: pxToRem(7px);
 
 			&.monovitality-button--icon-only {
 				padding: pxToRem(11px);
-				width: pxToRem(42px);
-				max-width: pxToRem(42px);
-				height: pxToRem(42px);
-				max-height: pxToRem(42px);
+				inline-size: pxToRem(42px);
+				max-inline-size: pxToRem(42px);
+				block-size: pxToRem(42px);
+				max-block-size: pxToRem(42px);
 			}
 
 			.monovitality-icon-holder {
-				width: pxToRem(18px);
-				height: pxToRem(18px);
+				inline-size: pxToRem(18px);
+				block-size: pxToRem(18px);
 			}
 		}
 	}

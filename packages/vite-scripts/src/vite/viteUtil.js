@@ -3,6 +3,7 @@ import svgr from "@svgr/rollup";
 import react from "@vitejs/plugin-react-swc";
 import { resolve, sep } from "node:path";
 import { defineConfig } from "vite";
+import autoprefixer from "autoprefixer";
 
 /** @typedef {import("vite").Alias} Alias */
 /** @typedef {import("vite").UserConfig} UserConfig */
@@ -90,17 +91,21 @@ export const getViteConfig = (isProduction, cwd, productionAliases, stylesWrappe
 					}
 				}
 			}
+		},
+		css: {
+			postcss: {
+				plugins: [autoprefixer]
+			}
 		}
 	};
 	if (stylesWrapperVariableName) {
-		baseConfig.css = {
-			preprocessorOptions: {
-				scss: {
-					additionalData: process.env[stylesWrapperVariableName]
-						? `$monovitality-styles-wrapper: "${process.env[stylesWrapperVariableName]}";
+		// @ts-expect-error - we defined this field above
+		baseConfig.css.preprocessorOptions = {
+			scss: {
+				additionalData: process.env[stylesWrapperVariableName]
+					? `$monovitality-styles-wrapper: "${process.env[stylesWrapperVariableName]}";
 						`
-						: ""
-				}
+					: ""
 			}
 		};
 	}

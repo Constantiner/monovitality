@@ -10,16 +10,17 @@
 
 @include monovitality-styles-wrapper {
 	.monovitality-theme-container {
-		width: 100%;
-		height: 100%;
-		min-height: 100vh;
+		inline-size: 100%;
+		block-size: 100%;
+		min-block-size: 100vh;
 	}
 
 	.monovitality-web-base-container {
-		width: 100%;
-		height: 100%;
-		min-height: 100vh;
-		margin: 0 auto;
+		inline-size: 100%;
+		block-size: 100%;
+		min-block-size: 100vh;
+		margin-inline: auto;
+		margin-block: 0;
 		padding: pxToRem(32px);
 		text-align: center;
 
@@ -47,8 +48,9 @@
 	}
 
 	.monovitality-content {
-		max-width: pxToRem(1280px);
-		margin: 0 auto;
+		max-inline-size: pxToRem(1280px);
+		margin-inline: auto;
+		margin-block: 0;
 	}
 
 	.logo-container {
@@ -59,8 +61,8 @@
 		gap: pxToRem(16px);
 
 		.logo {
-			height: pxToRem(160px);
-			width: pxToRem(160px);
+			inline-size: pxToRem(160px);
+			block-size: pxToRem(160px);
 			padding: pxToRem(24px);
 			will-change: filter;
 			transition: filter 300ms;

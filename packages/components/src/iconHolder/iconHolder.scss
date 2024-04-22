@@ -7,8 +7,8 @@
 		align-items: center;
 
 		.svg-inline--fa {
-			height: 100%;
-			width: 100%;
+			inline-size: max-content;
+			block-size: max-content;
 			vertical-align: initial;
 			box-sizing: inherit;
 		}

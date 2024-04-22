@@ -5,8 +5,9 @@
 @include monovitality-styles-wrapper {
 	.monovitality-footer {
 		padding: pxToRem(20px);
-		max-width: pxToRem(1280px);
-		margin: 0 auto;
+		max-inline-size: pxToRem(1280px);
+		margin-inline: auto;
+		margin-block: 0;
 		@include themed() {
 			color: theme(color-main);
 			background-color: theme(background-color-secondary);
