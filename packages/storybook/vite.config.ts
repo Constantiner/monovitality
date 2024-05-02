@@ -4,7 +4,15 @@ import { fileURLToPath } from "node:url";
 import { type UserConfig } from "vite";
 
 // https://vitejs.dev/config/
-export default ({ mode }): UserConfig => {
+const config = ({ mode }): UserConfig => {
 	const isProduction = mode === "production";
-	return getViteConfig(isProduction, dirname(fileURLToPath(import.meta.url)), [], "VITE_MONOVITALITY_STYLES_WRAPPER");
+	return getViteConfig(
+		isProduction,
+		dirname(fileURLToPath(import.meta.url)),
+		[],
+		"VITE_MONOVITALITY_STYLES_WRAPPER",
+		undefined
+	);
 };
+
+export default config;

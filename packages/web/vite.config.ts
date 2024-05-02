@@ -4,7 +4,7 @@ import { fileURLToPath } from "node:url";
 import { type UserConfig } from "vite";
 
 // https://vitejs.dev/config/
-export default ({ mode }): UserConfig => {
+const config = ({ mode }): UserConfig => {
 	const isProduction = mode === "production";
 	const base = process.env.MONOVITALITY_SPA_BASE_URL || undefined;
 	return getViteConfig(
@@ -15,3 +15,5 @@ export default ({ mode }): UserConfig => {
 		base
 	);
 };
+
+export default config;

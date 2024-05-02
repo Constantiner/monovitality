@@ -68,9 +68,9 @@ export default tsEslint.config(
 		}
 	},
 	eslintPluginPrettierRecommended,
+	// Unicorn
+	eslintPluginUnicorn.configs["flat/recommended"],
 	{
-		// Unicorn
-		...eslintPluginUnicorn.configs["flat/recommended"],
 		rules: {
 			"unicorn/filename-case": ["error", { case: "camelCase" }],
 			"unicorn/no-fn-reference-in-iterator": "off",
@@ -83,7 +83,20 @@ export default tsEslint.config(
 			"unicorn/no-array-callback-reference": "off",
 			"unicorn/prefer-node-protocol": "off",
 			"unicorn/prefer-object-from-entries": ["off"],
-			"unicorn/no-useless-undefined": "off"
+			"unicorn/no-useless-undefined": "off",
+			"unicorn/import-style": [
+				"error",
+				{
+					styles: {
+						"node:path": {
+							named: true
+						},
+						path: {
+							named: true
+						}
+					}
+				}
+			]
 		}
 	},
 	{
@@ -171,20 +184,7 @@ export default tsEslint.config(
 					tryExtensions: [".js", ".jsx", ".ts", ".tsx"]
 				}
 			],
-			"n/no-unpublished-import": "off",
-			"unicorn/import-style": [
-				"error",
-				{
-					styles: {
-						"node:path": {
-							named: true
-						},
-						path: {
-							named: true
-						}
-					}
-				}
-			]
+			"n/no-unpublished-import": "off"
 		}
 	},
 	{
@@ -264,6 +264,12 @@ export default tsEslint.config(
 		languageOptions: {
 			globals: globals.node,
 			sourceType: "commonjs"
+		}
+	},
+	{
+		files: ["packages/site/src/gatsby-types.d.ts"],
+		rules: {
+			"unicorn/no-abusive-eslint-disable": ["off"]
 		}
 	}
 );
