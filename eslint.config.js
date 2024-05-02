@@ -172,6 +172,7 @@ export default tsEslint.config(
 			"packages/*/__tests__/**"
 		],
 		rules: {
+			...nodePlugin.configs["flat/recommended"].rules,
 			"n/no-unsupported-features/es-syntax": [
 				"error",
 				{
@@ -184,7 +185,9 @@ export default tsEslint.config(
 					tryExtensions: [".js", ".jsx", ".ts", ".tsx"]
 				}
 			],
-			"n/no-unpublished-import": "off"
+			"n/no-unpublished-import": "off",
+			// We turn it of because it is not ready for monorepos and only use the closest package.json for the current file
+			"n/no-extraneous-import": "off"
 		}
 	},
 	{
@@ -197,6 +200,7 @@ export default tsEslint.config(
 			}
 		},
 		rules: {
+			...reactRecommended.rules,
 			"react/jsx-uses-react": "off",
 			"react/react-in-jsx-scope": "off",
 			"react/prop-types": [2, { ignore: ["children"] }]
