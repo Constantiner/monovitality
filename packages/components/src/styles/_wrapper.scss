@@ -1,5 +1,7 @@
+@use "sass:meta";
+
 @mixin monovitality-styles-wrapper {
-	@if variable-exists(monovitality-styles-wrapper) {
+	@if meta.variable-exists(monovitality-styles-wrapper) {
 		#{$monovitality-styles-wrapper} {
 			@content;
 		}

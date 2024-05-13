@@ -2,7 +2,7 @@ const hasClass = (element: Element, className: string): boolean => {
 	if (element.classList) {
 		return element.classList.contains(className);
 	}
-	return new RegExp("(\\s|^)" + className + "(\\s|$)").test(element.className);
+	return new RegExp(String.raw`(\s|^)` + className + String.raw`(\s|$)`).test(element.className);
 };
 
 export const addClass = (element: Element | null, className: string): void => {
@@ -23,7 +23,7 @@ export const removeClass = (element: Element | null, className: string): void =>
 	if (element.classList) {
 		element.classList.remove(className);
 	} else if (hasClass(element, className)) {
-		const reg = new RegExp("(\\s|^)" + className + "(\\s|$)");
+		const reg = new RegExp(String.raw`(\s|^)` + className + String.raw`(\s|$)`);
 		element.className = element.className.replace(reg, " ");
 	}
 };

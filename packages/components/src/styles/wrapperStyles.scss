@@ -1,4 +1,6 @@
-@if variable-exists(monovitality-styles-wrapper) {
+@use "sass:meta";
+
+@if meta.variable-exists(monovitality-styles-wrapper) {
 	#{$monovitality-styles-wrapper} {
 		width: 100%;
 		max-width: 100%;
