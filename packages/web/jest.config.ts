@@ -10,6 +10,9 @@ const config: Config = {
 			"ts-jest",
 			// This is a custom transformer that replaces `import.meta` with a custom object for Vite builds
 			{
+				isolatedModules: true,
+				useESM: true,
+				tsconfig: "./__tests__/tsconfig.json",
 				diagnostics: {
 					ignoreCodes: [1343]
 				},
@@ -52,4 +55,4 @@ const config: Config = {
 	collectCoverage: false
 };
 
-export default config;
+module.exports = config;

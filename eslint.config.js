@@ -150,6 +150,12 @@ export default tsEslint.config(
 		}
 	},
 	{
+		files: ["jest.config*.ts", "**/jest.config*.ts"],
+		rules: {
+			"unicorn/prefer-module": ["off"]
+		}
+	},
+	{
 		files: [
 			"gatsby-config.ts",
 			"**/gatsby-config.ts",

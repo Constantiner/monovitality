@@ -17,7 +17,17 @@ const config: Config = {
 			statements: 100
 		}
 	},
-	collectCoverage: false
+	collectCoverage: false,
+	transform: {
+		"^.+\\.(ts|tsx)$": [
+			"ts-jest",
+			{
+				isolatedModules: true,
+				useESM: true,
+				tsconfig: "./__tests__/tsconfig.json"
+			}
+		]
+	}
 };
 
-export default config;
+module.exports = config;
