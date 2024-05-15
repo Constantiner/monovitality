@@ -1,9 +1,18 @@
 {
 	"name": "@monovitality/types",
 	"version": "0.0.1",
-	"description": "A package with shared types",
 	"private": true,
-	"type": "module",
+	"description": "A package with shared types",
+	"homepage": "https://github.com/Constantiner/monovitality#readme",
+	"bugs": {
+		"url": "https://github.com/Constantiner/monovitality/issues"
+	},
+	"repository": {
+		"type": "git",
+		"url": "git+https://github.com/Constantiner/monovitality.git",
+		"directory": "packages/types"
+	},
+	"license": "MIT",
 	"author": {
 		"name": "Konstantin Kovalev",
 		"email": "constantiner@gmail.com"
@@ -14,21 +23,12 @@
 			"email": "constantiner@gmail.com"
 		}
 	],
-	"homepage": "https://github.com/Constantiner/monovitality#readme",
-	"license": "MIT",
-	"repository": {
-		"type": "git",
-		"url": "git+https://github.com/Constantiner/monovitality.git",
-		"directory": "packages/types"
-	},
+	"type": "module",
+	"main": "src/index.ts",
 	"scripts": {
-		"types": "npx tsc --noEmit",
 		"test": "npx jest",
+		"test:coverage": "npx jest --coverage",
 		"test:watch": "npx jest --watch",
-		"test:coverage": "npx jest --coverage"
-	},
-	"bugs": {
-		"url": "https://github.com/Constantiner/monovitality/issues"
-	},
-	"main": "src/index.ts"
+		"types": "npx tsc --noEmit"
+	}
 }

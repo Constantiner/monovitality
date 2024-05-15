@@ -1,8 +1,18 @@
 {
 	"name": "@monovitality/site",
 	"version": "0.0.1",
-	"description": "Static site to present Monovitality build and Storybook",
 	"private": true,
+	"description": "Static site to present Monovitality build and Storybook",
+	"homepage": "https://github.com/Constantiner/monovitality#readme",
+	"bugs": {
+		"url": "https://github.com/Constantiner/monovitality/issues"
+	},
+	"repository": {
+		"type": "git",
+		"url": "git+https://github.com/Constantiner/monovitality.git",
+		"directory": "packages/site"
+	},
+	"license": "MIT",
 	"author": {
 		"name": "Konstantin Kovalev",
 		"email": "constantiner@gmail.com"
@@ -13,25 +23,15 @@
 			"email": "constantiner@gmail.com"
 		}
 	],
-	"homepage": "https://github.com/Constantiner/monovitality#readme",
-	"license": "MIT",
-	"repository": {
-		"type": "git",
-		"url": "git+https://github.com/Constantiner/monovitality.git",
-		"directory": "packages/site"
-	},
 	"scripts": {
-		"develop": "npx gatsby develop --verbose",
-		"start": "npx gatsby develop",
 		"build": "npx gatsby build",
 		"build:fast": "npx gatsby build --noUglify=true",
-		"serve": "npx gatsby serve",
 		"clean": "npx gatsby clean",
-		"types": "npx tsc --noEmit",
-		"stylelint": "npx stylelint '**/*.{css,scss}' --allow-empty-input"
-	},
-	"bugs": {
-		"url": "https://github.com/Constantiner/monovitality/issues"
+		"develop": "npx gatsby develop --verbose",
+		"serve": "npx gatsby serve",
+		"start": "npx gatsby develop",
+		"stylelint": "npx stylelint '**/*.{css,scss}' --allow-empty-input",
+		"types": "npx tsc --noEmit"
 	},
 	"dependencies": {
 		"@mdx-js/react": "^3.0.1",
@@ -56,10 +56,10 @@
 		"react-helmet": "^6.1.0",
 		"resolve-url-loader": "^5.0.0"
 	},
-	"engines": {
-		"node": ">=16"
-	},
 	"devDependencies": {
 		"@types/react-helmet": "^6.1.11"
+	},
+	"engines": {
+		"node": ">=16"
 	}
 }

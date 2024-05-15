@@ -1,39 +1,39 @@
 {
 	"name": "@monovitality/web",
 	"version": "0.0.1",
-	"description": "A package with React web application aka SPA",
 	"private": true,
-	"type": "module",
+	"description": "A package with React web application aka SPA",
+	"homepage": "https://github.com/Constantiner/monovitality#readme",
+	"bugs": {
+		"url": "https://github.com/Constantiner/monovitality/issues"
+	},
+	"repository": {
+		"type": "git",
+		"url": "git+https://github.com/Constantiner/monovitality.git",
+		"directory": "packages/web"
+	},
+	"license": "MIT",
 	"author": {
 		"name": "Konstantin Kovalev",
 		"email": "constantiner@gmail.com"
 	},
-	"main": "src/main.tsx",
 	"contributors": [
 		{
 			"name": "Konstantin Kovalev",
 			"email": "constantiner@gmail.com"
 		}
 	],
-	"homepage": "https://github.com/Constantiner/monovitality#readme",
-	"license": "MIT",
-	"repository": {
-		"type": "git",
-		"url": "git+https://github.com/Constantiner/monovitality.git",
-		"directory": "packages/web"
-	},
+	"type": "module",
+	"main": "src/main.tsx",
 	"scripts": {
-		"dev": "npx vite",
 		"build": "tsc && cross-env MONOVITALITY_STYLES_WRAPPER=.test npx vite build",
 		"build:custom-root": "tsc && npx vite build --base=%%skinRoot%%",
-		"types": "npx tsc --noEmit",
-		"stylelint": "npx stylelint '**/*.{css,scss}' --allow-empty-input",
+		"dev": "npx vite",
 		"preview": "npx vite preview",
+		"stylelint": "npx stylelint '**/*.{css,scss}' --allow-empty-input",
 		"test": "npx jest",
-		"test:coverage": "npx jest --coverage"
-	},
-	"bugs": {
-		"url": "https://github.com/Constantiner/monovitality/issues"
+		"test:coverage": "npx jest --coverage",
+		"types": "npx tsc --noEmit"
 	},
 	"dependencies": {
 		"@monovitality/components": "*",

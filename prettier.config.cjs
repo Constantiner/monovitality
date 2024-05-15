@@ -29,5 +29,6 @@ module.exports = {
 			files: ".github/workflows/ci.yml",
 			options: { useTabs: false, tadWidth: 2, printWidth: 40, singleQuote: true }
 		}
-	]
+	],
+	plugins: ["prettier-plugin-packagejson"]
 };

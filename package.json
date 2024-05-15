@@ -1,9 +1,8 @@
 {
 	"name": "monovitality",
-	"private": true,
 	"version": "0.0.1",
+	"private": true,
 	"description": "An example monorepo for a React SPA with Vite, SCSS, TypeScript, Storybook support",
-	"type": "module",
 	"keywords": [
 		"React",
 		"SPA",
@@ -14,6 +13,15 @@
 		"monorepo",
 		"Lerna"
 	],
+	"homepage": "https://constantiner.github.io/monovitality/",
+	"bugs": {
+		"url": "https://github.com/Constantiner/monovitality/issues"
+	},
+	"repository": {
+		"type": "git",
+		"url": "git+https://github.com/Constantiner/monovitality.git"
+	},
+	"license": "MIT",
 	"author": {
 		"name": "Konstantin Kovalev",
 		"email": "constantiner@gmail.com"
@@ -24,32 +32,7 @@
 			"email": "constantiner@gmail.com"
 		}
 	],
-	"homepage": "https://constantiner.github.io/monovitality/",
-	"license": "MIT",
-	"repository": {
-		"type": "git",
-		"url": "git+https://github.com/Constantiner/monovitality.git"
-	},
-	"bugs": {
-		"url": "https://github.com/Constantiner/monovitality/issues"
-	},
-	"scripts": {
-		"dev": "npm run dev --prefix ./packages/web",
-		"build": "npm run build --prefix ./packages/web",
-		"storybook": "npm run storybook --prefix ./packages/storybook",
-		"build-storybook": "npm run build-storybook --prefix ./packages/storybook",
-		"dev:site": "npm run develop --prefix ./packages/site",
-		"build:site": "npm run build --prefix ./packages/site",
-		"clean:site": "npm run clean --prefix ./packages/site",
-		"lint:dev": "npx eslint . --report-unused-disable-directives --max-warnings 0",
-		"lint": "npx lerna run types && npm run lint:dev && npx lerna run stylelint",
-		"lint-staged": "npx lint-staged",
-		"test": "npx lerna run test",
-		"preview": "npm run preview --prefix ./packages/web",
-		"format": "npx prettier --write '**/*.{js,cjs,ts,jsx,tsx,css,scss,json,htm,html,yml,eslintrc,huskyrc,lintstagedrc,prettierrc,stylelintrc}'",
-		"lint:config-inspector": "npx @eslint/config-inspector",
-		"prepare": "husky"
-	},
+	"type": "module",
 	"workspaces": {
 		"packages": [
 			"packages/*"
@@ -57,6 +40,23 @@
 		"nohoist": [
 			"gatsby"
 		]
+	},
+	"scripts": {
+		"build": "npm run build --prefix ./packages/web",
+		"build-storybook": "npm run build-storybook --prefix ./packages/storybook",
+		"build:site": "npm run build --prefix ./packages/site",
+		"clean:site": "npm run clean --prefix ./packages/site",
+		"dev": "npm run dev --prefix ./packages/web",
+		"dev:site": "npm run develop --prefix ./packages/site",
+		"format": "npx prettier --write '**/*.{js,cjs,ts,jsx,tsx,css,scss,json,htm,html,yml,eslintrc,huskyrc,lintstagedrc,prettierrc,stylelintrc}'",
+		"lint": "npx lerna run types && npm run lint:dev && npx lerna run stylelint",
+		"lint-staged": "npx lint-staged",
+		"lint:config-inspector": "npx @eslint/config-inspector",
+		"lint:dev": "npx eslint . --report-unused-disable-directives --max-warnings 0",
+		"prepare": "husky",
+		"preview": "npm run preview --prefix ./packages/web",
+		"storybook": "npm run storybook --prefix ./packages/storybook",
+		"test": "npx lerna run test"
 	},
 	"dependencies": {
 		"@fortawesome/free-solid-svg-icons": "^6.5.2",
@@ -105,6 +105,7 @@
 		"lint-staged": "^15.2.2",
 		"postcss": "^8.4.38",
 		"prettier": "^3.2.5",
+		"prettier-plugin-packagejson": "^2.5.0",
 		"sass": "^1.77.1",
 		"stylelint": "^16.5.0",
 		"stylelint-config-recommended": "^14.0.0",

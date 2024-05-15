@@ -6,6 +6,8 @@
 /packages/*/node_modules/
 /packages/*/build/
 /packages/*/bin/
+/packages/*/.cache/
+/packages/site/public/
 /dist/
 /build/
 /packages/*/storybook-static
