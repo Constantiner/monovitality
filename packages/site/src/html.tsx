@@ -1,4 +1,4 @@
-import { HTMLAttributes, HtmlHTMLAttributes, ReactElement } from "react";
+import type { HTMLAttributes, HtmlHTMLAttributes, ReactElement } from "react";
 
 type HTMLProperties = {
 	htmlAttributes?: HtmlHTMLAttributes<HTMLHtmlElement>;

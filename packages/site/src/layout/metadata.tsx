@@ -1,5 +1,5 @@
 import { graphql, useStaticQuery } from "gatsby";
-import { FunctionComponent } from "react";
+import type { FunctionComponent } from "react";
 import { Helmet } from "react-helmet";
 import defaultImg from "../assets/site-cover.jpg";
 

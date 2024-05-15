@@ -1,4 +1,4 @@
-import { HeadFC, Link, PageProps } from "gatsby";
+import { type HeadFC, Link, type PageProps } from "gatsby";
 import { type FunctionComponent } from "react";
 
 const pageStyles = {

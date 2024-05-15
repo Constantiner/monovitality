@@ -1,7 +1,7 @@
 import cn from "clsx";
 import { forwardRef, type ButtonHTMLAttributes } from "react";
 import type { IconProperties } from "../iconHolder/iconHolderUtil";
-import { ButtonVariants } from "./button";
+import type { ButtonVariants } from "./button";
 import { LabelButtonBase } from "./labelButtonBase";
 
 export type IconButtonProperties = Omit<

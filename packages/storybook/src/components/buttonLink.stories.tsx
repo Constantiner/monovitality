@@ -1,4 +1,4 @@
-import { Button, ButtonProperties } from "@monovitality/components";
+import { Button, type ButtonProperties } from "@monovitality/components";
 import type { Meta, StoryObj } from "@storybook/react";
 import "./buttonLink.scss";
 

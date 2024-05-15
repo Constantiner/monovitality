@@ -2,7 +2,7 @@ import { forwardRef, type ButtonHTMLAttributes } from "react";
 import { match, P } from "ts-pattern";
 import { IconHolder } from "../iconHolder/iconHolder";
 import type { IconProperties } from "../iconHolder/iconHolderUtil";
-import { Button, ButtonVariants } from "./button";
+import { Button, type ButtonVariants } from "./button";
 import "./button.scss";
 
 export type ButtonBaseProperties = ButtonHTMLAttributes<HTMLButtonElement> &

@@ -1,6 +1,6 @@
 import { forwardRef, type ButtonHTMLAttributes } from "react";
 import type { IconProperties } from "../iconHolder/iconHolderUtil";
-import { ButtonVariants } from "./button";
+import type { ButtonVariants } from "./button";
 import { LabelButtonBase } from "./labelButtonBase";
 
 export type LabelButtonProperties = ButtonHTMLAttributes<HTMLButtonElement> &
