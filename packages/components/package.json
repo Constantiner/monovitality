@@ -31,7 +31,7 @@
 	},
 	"dependencies": {
 		"@fortawesome/fontawesome-svg-core": "^6.5.2",
-		"@fortawesome/react-fontawesome": "^0.2.0",
+		"@fortawesome/react-fontawesome": "^0.2.1",
 		"@monovitality/types": "*",
 		"@react-hook/media-query": "^1.1.1",
 		"class-variance-authority": "^0.7.0",

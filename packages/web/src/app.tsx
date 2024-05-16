@@ -1,21 +1,14 @@
-import { faPlus as faIncrementCounterButton } from "@fortawesome/free-solid-svg-icons";
-import {
-	GlobalStyles,
-	IconButton,
-	IconHolder,
-	getFontAwesomeIcon,
-	getSvgIcon,
-	useTheme
-} from "@monovitality/components";
+import { GlobalStyles, IconButton, IconHolder, getFaSvgIcon, getSvgIcon, useTheme } from "@monovitality/components";
 import type { Counter } from "@monovitality/submodule";
 import classNames from "clsx";
 import { Suspense, lazy, useEffect, useState } from "react";
 import "./app.scss";
-import { ReactComponent as DecrementCounterButton } from "./minus-sign-of-a-line-in-horizontal-position-svgrepo-com.svg";
+import { ReactComponent as DecrementCounterButton } from "./minus.svg";
+import { ReactComponent as faIncrementCounterButton } from "./plus-solid.svg";
 import { ReactComponent as ReactLogo } from "./react.svg";
 import { ReactComponent as ViteLogo } from "./vite.svg";
 
-const incrementCounterButtonIcon = getFontAwesomeIcon(faIncrementCounterButton);
+const incrementCounterButtonIcon = getFaSvgIcon(faIncrementCounterButton);
 const decrementCounterButtonIcon = getSvgIcon(DecrementCounterButton);
 
 const SubmoduleApp = lazy(() =>

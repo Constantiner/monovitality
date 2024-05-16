@@ -1,8 +1,8 @@
-import { faFaceSmile as faButtonIcon } from "@fortawesome/free-solid-svg-icons";
-import { IconButton, getFontAwesomeIcon } from "@monovitality/components";
+import { IconButton, getFaSvgIcon } from "@monovitality/components";
 import type { Meta, StoryObj } from "@storybook/react";
+import { ReactComponent as faButtonIcon } from "./face-smile-regular.svg";
 
-const buttonIcon = getFontAwesomeIcon(faButtonIcon);
+const buttonIcon = getFaSvgIcon(faButtonIcon);
 
 // More on how to set up stories at: https://storybook.js.org/docs/writing-stories#default-export
 const meta: Meta<typeof IconButton> = {

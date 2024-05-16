@@ -59,7 +59,6 @@
 		"test": "npx lerna run test"
 	},
 	"dependencies": {
-		"@fortawesome/free-solid-svg-icons": "^6.5.2",
 		"@radix-ui/react-slot": "^1.0.2",
 		"clsx": "^2.1.1",
 		"react": "^18.3.1",
